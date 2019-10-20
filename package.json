@@ -1,31 +1,56 @@
 {
-  "name": "gnome-village",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "gnome-village",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"bootstrap": "^4.3.1",
+		"react": "^16.10.2",
+		"react-bootstrap": "^1.0.0-beta.14",
+		"react-dom": "^16.10.2",
+		"react-scripts": "3.2.0"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"local-server": "node json-server\\server.js",
+		"remote-json-server": "json-server https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json --port 5000",
+		"dev": "concurrently \"yarn start\" \"yarn local-server\""
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"concurrently": "^5.0.0",
+		"json-server": "^0.15.1"
+	},
+	"author": "jlriom@hotmail.es",
+	"keywords": [
+		"ES6+",
+		"Async / Await",
+		"React",
+		"Redux",
+		"react-redux",
+		"redux-thunk",
+		"react-bootstrap",
+		"json-server",
+		"Jest"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jlriom/gnome-village.git"
+	}
 }
