@@ -36,7 +36,11 @@
 	},
 	"devDependencies": {
 		"concurrently": "^5.0.0",
-		"json-server": "^0.15.1"
+		"enzyme": "^3.10.0",
+		"enzyme-adapter-react-16": "^1.15.1",
+		"jest": "^24.9.0",
+		"json-server": "^0.15.1",
+		"react-test-renderer": "^16.11.0"
 	},
 	"author": "jlriom@hotmail.es",
 	"keywords": [
