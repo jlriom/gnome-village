@@ -1,7 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import App from "./components/App";
+import { Provider } from "react-redux";
+import store from "./store";
+
+ReactDOM.render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById("root")
+);
 
 //import brastlewarkHttpTest from "./api/brastlewark-http.test";
 //import readApiTest from "./api/brastlewark-read-api.tests";
@@ -11,4 +20,4 @@ import App from "./App";
 //readApiTest();
 //brastlewarkHttpTest();
 
-ReactDOM.render(<App />, document.getElementById("root"));
+//ReactDOM.render(<App />, document.getElementById("root"));
