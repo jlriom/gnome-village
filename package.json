@@ -24,9 +24,6 @@
 		"remote-json-server": "json-server https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json --port 5000",
 		"dev": "concurrently \"yarn start\" \"yarn local-server\""
 	},
-	"eslintConfig": {
-		"extends": "react-app"
-	},
 	"browserslist": {
 		"production": [
 			">0.2%",
@@ -43,6 +40,17 @@
 		"concurrently": "^5.0.0",
 		"enzyme": "^3.10.0",
 		"enzyme-adapter-react-16": "^1.15.1",
+		"eslint": "^6.6.0",
+		"eslint-config-airbnb": "^18.0.1",
+		"eslint-config-google": "^0.14.0",
+		"eslint-config-standard": "^14.1.0",
+		"eslint-plugin-import": "^2.18.2",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-node": "^10.0.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-react": "^7.16.0",
+		"eslint-plugin-react-hooks": "^1.7.0",
+		"eslint-plugin-standard": "^4.0.1",
 		"jest": "^24.9.0",
 		"json-server": "^0.15.1",
 		"react-test-renderer": "^16.11.0"
