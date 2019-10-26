@@ -11,13 +11,3 @@ ReactDOM.render(
 	</Provider>,
 	document.getElementById("root")
 );
-
-//import brastlewarkHttpTest from "./api/brastlewark-http.test";
-//import readApiTest from "./api/brastlewark-read-api.tests";
-//import writeApiTest from "./api/brastlewark-write-api.tests";
-
-//writeApiTest();
-//readApiTest();
-//brastlewarkHttpTest();
-
-//ReactDOM.render(<App />, document.getElementById("root"));

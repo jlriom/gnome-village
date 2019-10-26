@@ -1,13 +1,15 @@
 import React from "react";
 import Header from "./Header";
-import Spinner from "./Spinner";
+import PropTypes from "prop-types";
 
-const Layout = ({ auth, doLogin, doLogout, children }) => (
+const Layout = ({ children }) => (
 	<div>
-		<Header doLogin={doLogin} doLogout={doLogout} auth={auth} />
-		<Spinner />
+		<Header />
 		{children}
 	</div>
 );
 
+Layout.propTypes = {
+	children: PropTypes.element
+};
 export default Layout;
