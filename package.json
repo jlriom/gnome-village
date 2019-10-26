@@ -16,13 +16,13 @@
 		"redux-thunk": "^2.3.0"
 	},
 	"scripts": {
-		"start": "react-scripts start",
+		"start": "concurrently \"yarn start:dev\" \"yarn start:server\"",
+		"start:dev": "react-scripts start",
+		"start:server": "node json-server\\server.js",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"local-server": "node json-server\\server.js",
-		"remote-json-server": "json-server https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json --port 5000",
-		"dev": "concurrently \"yarn start\" \"yarn local-server\""
+		"reset:db": "node json-server\\createDb.js"
 	},
 	"browserslist": {
 		"production": [
@@ -53,7 +53,8 @@
 		"eslint-plugin-standard": "^4.0.1",
 		"jest": "^24.9.0",
 		"json-server": "^0.15.1",
-		"react-test-renderer": "^16.11.0"
+		"react-test-renderer": "^16.11.0",
+		"request": "^2.88.0"
 	},
 	"author": "jlriom@hotmail.es",
 	"keywords": [
