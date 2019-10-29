@@ -1,16 +1,40 @@
 import * as brastlewarkHttp from "./brastlewark-http";
 
+Array.prototype.groupBy = function(prop) {
+	return this.reduce(function(groups, item) {
+		const val = item[prop];
+		groups[val] = groups[val] || [];
+		groups[val].push(item);
+		return groups;
+	}, {});
+};
+
 const getHairColors = async () => {
 	const gnomes = await brastlewarkHttp.getAllGnomes();
-	return [...new Set(gnomes.map(data => data.hair_color))];
+	const gnomesByHairColor = gnomes.groupBy("hair_color");
+	return Object.entries(gnomesByHairColor).map(entry => {
+		return { hair_color: entry[0], count: entry[1].length };
+	});
 };
 
 const getProfessions = async () => {
 	const gnomes = await brastlewarkHttp.getAllGnomes();
+
 	var professions = gnomes
 		.map(data => [...data.professions])
 		.reduce((total, currentValue) => (total = [...total, ...currentValue]));
-	return [...new Set(professions)];
+
+	let gnomesByProfession = [...new Set(professions)].map(profession => {
+		return { profession, count: 0 };
+	});
+
+	professions.reduce(
+		(total, current) =>
+			gnomesByProfession.find(profession => profession.profession === current)
+				.count++
+	);
+
+	return gnomesByProfession;
 };
 
 const searchGnomes = async (
