@@ -1,5 +1,6 @@
 import * as brastlewarkHttp from "./brastlewark-http";
 
+// eslint-disable-next-line no-extend-native
 Array.prototype.groupBy = function(prop) {
 	return this.reduce(function(groups, item) {
 		const val = item[prop];
