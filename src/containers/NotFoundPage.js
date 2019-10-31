@@ -1,5 +1,11 @@
 import React from "react";
-
-const NotFoundPage = () => <div> NotFoundPage </div>;
+import { Link } from "react-router-dom";
+const NotFoundPage = () => (
+	<>
+		<h1>Page Not found</h1>
+		<br></br>
+		<Link to='/'>Go to Dashboard</Link>
+	</>
+);
 
 export default NotFoundPage;
