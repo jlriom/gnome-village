@@ -1,18 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const PageLayout = ({ headerText, children }) => {
+const PageLayout = ({ headerText, ...props }) => {
 	return (
 		<>
 			<h2 className='my-3 display-4'>{headerText}</h2>
-			<div>{children}</div>
+			<div>{props.children}</div>
 		</>
 	);
 };
 
 PageLayout.propTypes = {
-	headerText: PropTypes.string,
-	children: PropTypes.element
+	headerText: PropTypes.string
 };
 
 export default PageLayout;

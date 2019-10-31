@@ -5,7 +5,10 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import App from "./App";
 import { Provider } from "react-redux";
-import store from "./store";
+
+import configureStore from "./store/configureStore";
+
+const store = configureStore();
 
 ReactDOM.render(
 	<Provider store={store}>

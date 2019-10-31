@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
-import gnomesReducer from "./gnomes";
+
+import authReducer from "./authReducer";
 
 const rootReducer = combineReducers({
-	gnomes: gnomesReducer
+	auth: authReducer
 });
 
 export default rootReducer;
