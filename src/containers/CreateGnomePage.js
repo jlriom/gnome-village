@@ -1,5 +1,8 @@
 import React from "react";
+import PageLayout from "../components/layout/PageLayout";
 
-const CreateGnomePage = () => <div> Create Gnome Page</div>;
+const CreateGnomePage = () => {
+	return <PageLayout headerText='Create Gnome'>Create gnome</PageLayout>;
+};
 
 export default CreateGnomePage;

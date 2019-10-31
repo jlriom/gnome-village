@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "./components/layout/Layout";
+import AppLayout from "./components/layout/AppLayout";
 
-const App = () => <Layout></Layout>;
+const App = () => <AppLayout></AppLayout>;
 
 export default App;

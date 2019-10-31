@@ -1,5 +1,8 @@
 import React from "react";
+import PageLayout from "../components/layout/PageLayout";
 
-const DashBoardPage = () => <div> Dashboard Page</div>;
+const DashBoardPage = () => {
+	return <PageLayout headerText='Dashboard'>Dashboard</PageLayout>;
+};
 
 export default DashBoardPage;

@@ -1,8 +1,8 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import history from "../../shared/history";
-import Header from "./Header";
-import Footer from "./Footer";
+import AppHeader from "./AppHeader";
+import AppFooter from "./AppFooter";
 
 import {
 	DashBoardPage,
@@ -12,10 +12,10 @@ import {
 	NotFoundPage
 } from "../../containers";
 
-const Layout = () => (
+const AppLayout = () => (
 	<div>
 		<Router history={history}>
-			<Header />
+			<AppHeader />
 			<div className='container my-4'>
 				<Switch>
 					<Route exact path='/' component={DashBoardPage} />
@@ -25,9 +25,9 @@ const Layout = () => (
 					<Route component={NotFoundPage} />
 				</Switch>
 			</div>
-			<Footer />
+			<AppFooter />
 		</Router>
 	</div>
 );
 
-export default Layout;
+export default AppLayout;
