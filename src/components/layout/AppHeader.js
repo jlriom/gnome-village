@@ -13,7 +13,7 @@ const AppHeader = () => {
 				<Navbar.Collapse id='basic-navbar-nav' className='justify-content-end'>
 					<Nav>
 						<Nav.Link as={Link} to='/dashboard'>
-							DashBoard
+							Dashboard
 						</Nav.Link>
 						<Nav.Link as={Link} to='/brastlewark'>
 							Search Habitants
