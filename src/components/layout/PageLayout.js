@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const PageLayout = ({ headerText, children }) => {
 	return (
 		<>
-			<h2 className='my-3'>{headerText}</h2>
+			<h2 className='my-3 display-4'>{headerText}</h2>
 			<div>{children}</div>
 		</>
 	);

@@ -6,7 +6,7 @@ const AppFooter = () => {
 	return (
 		<Navbar bg='light' expand='lg' fixed='bottom'>
 			<div className='container justify-content-center'>
-				<span className='mx-2'> 2020 jlriom </span>
+				<span className='mx-2'> 2020 - MIT License - jlriom - </span>
 				<FontAwesomeIcon icon={faGithub} />
 				<a
 					className='mx-2'

@@ -1,27 +1,41 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const AppHeader = () => {
 	return (
 		<Navbar bg='light' expand='lg'>
 			<div className='container'>
-				<Navbar.Brand href='#home'>Gnomes Village</Navbar.Brand>
+				<Navbar.Brand as={Link} to='/'>
+					Brastlewark village
+				</Navbar.Brand>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav' className='justify-content-end'>
 					<Nav>
-						<Nav.Link as={Link} to='/'>
+						<Nav.Link as={Link} to='/dashboard'>
 							DashBoard
 						</Nav.Link>
-						<NavDropdown title='Gnomes' id='nav-dropdown'>
-							<NavDropdown.Item to='/gnomes' as={Link}>
-								Search Gnomes
-							</NavDropdown.Item>
-							<NavDropdown.Divider />
-							<NavDropdown.Item to='/gnomes/new' as={Link}>
-								New Gnome
-							</NavDropdown.Item>
-						</NavDropdown>
+						<Nav.Link as={Link} to='/brastlewark'>
+							Search Habitants
+						</Nav.Link>
+						<Nav.Link as={Link} to='/user/myprofile'>
+							My Profile
+						</Nav.Link>
+						<Nav.Link as={Link} to='/user/register'>
+							Register
+						</Nav.Link>
+						<Nav.Link as={Link} to='/user/unregister'>
+							Unregister
+						</Nav.Link>
+						<Nav.Link as={Link} to='/about'>
+							About
+						</Nav.Link>{" "}
+						<Nav.Link as={Link} to='/auth/login'>
+							Login
+						</Nav.Link>
+						<Nav.Link as={Link} to='/auth/logout'>
+							Logout
+						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</div>

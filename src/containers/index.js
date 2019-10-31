@@ -1,13 +1,22 @@
+import HomePage from "./HomePage";
 import DashBoardPage from "./DashBoardPage";
-import GnomesPage from "./GnomesPage";
-import GnomeDetailsPage from "./GnomeDetailsPage";
-import CreateGnomePage from "./CreateGnomePage";
+import AboutPage from "./AboutPage";
 import NotFoundPage from "./NotFoundPage";
 
+import { SearchPage, HabitantPage } from "./brastlewark";
+import { MyProfilePage, RegisterPage, UnRegisterPage } from "./user";
+import { LoginPage, LogoutPage } from "./auth";
+
 export {
+	HomePage,
 	DashBoardPage,
-	GnomesPage,
-	GnomeDetailsPage,
-	CreateGnomePage,
-	NotFoundPage
+	AboutPage,
+	NotFoundPage,
+	SearchPage,
+	HabitantPage,
+	MyProfilePage,
+	RegisterPage,
+	UnRegisterPage,
+	LoginPage,
+	LogoutPage
 };

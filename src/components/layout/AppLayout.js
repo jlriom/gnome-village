@@ -5,11 +5,17 @@ import AppHeader from "./AppHeader";
 import AppFooter from "./AppFooter";
 
 import {
+	HomePage,
 	DashBoardPage,
-	GnomesPage,
-	GnomeDetailsPage,
-	CreateGnomePage,
-	NotFoundPage
+	AboutPage,
+	NotFoundPage,
+	SearchPage,
+	HabitantPage,
+	MyProfilePage,
+	RegisterPage,
+	UnRegisterPage,
+	LoginPage,
+	LogoutPage
 } from "../../containers";
 
 const AppLayout = () => (
@@ -18,10 +24,16 @@ const AppLayout = () => (
 			<AppHeader />
 			<div className='container my-4'>
 				<Switch>
-					<Route exact path='/' component={DashBoardPage} />
-					<Route exact path='/gnomes' component={GnomesPage} />
-					<Route exact path='/gnomes/new' component={CreateGnomePage} />
-					<Route exact path='/gnomes/:id' component={GnomeDetailsPage} />
+					<Route exact path='/' component={HomePage} />
+					<Route exact path='/dashboard' component={DashBoardPage} />
+					<Route exact path='/brastlewark' component={SearchPage} />
+					<Route exact path='/brastlewark/:id' component={HabitantPage} />
+					<Route exact path='/user/myprofile' component={MyProfilePage} />
+					<Route exact path='/user/register' component={RegisterPage} />
+					<Route exact path='/user/unregister' component={UnRegisterPage} />
+					<Route exact path='/auth/login' component={LoginPage} />
+					<Route exact path='/auth/logout' component={LogoutPage} />
+					<Route exact path='/about' component={AboutPage} />
 					<Route component={NotFoundPage} />
 				</Switch>
 			</div>
