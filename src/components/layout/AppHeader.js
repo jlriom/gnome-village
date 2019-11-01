@@ -2,8 +2,7 @@ import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import LogoutLinkPopup from "../LogoutLinkPopup";
-
-const If = props => (props.condition ? <>{props.children} </> : null);
+import If from "../If";
 
 const AppHeader = ({ auth }) => {
 	console.log("auth", auth);
