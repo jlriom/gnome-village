@@ -5,6 +5,7 @@ const PageLayout = ({ headerText, ...props }) => {
 	return (
 		<>
 			<h2 className='my-3 display-4'>{headerText}</h2>
+			<hr></hr>
 			<div>{props.children}</div>
 		</>
 	);

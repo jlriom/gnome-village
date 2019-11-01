@@ -1,8 +1,10 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import LogoutLinkPopup from "../LogoutLinkPopup";
 import LoginLinkPopup from "../LoginLinkPopup";
+import RegisterLinkPopup from "../RegisterLinkPopup";
+
+import SessionDropdown from "../SessionDropdown";
 
 import If from "../If";
 
@@ -34,21 +36,11 @@ const AppHeader = ({ auth }) => {
 				<Navbar.Collapse id='basic-navbar-nav' className='justify-content-end'>
 					<Nav>
 						<If condition={!auth.isLoggedIn}>
-							<Nav.Link as={Link} to='/user/register'>
-								Register
-							</Nav.Link>
+							<RegisterLinkPopup />
 							<LoginLinkPopup />
 						</If>
 						<If condition={auth.isLoggedIn}>
-							<If condition={!auth.isGuest}>
-								<Nav.Link as={Link} to='/user/myprofile'>
-									My Profile
-								</Nav.Link>
-								<Nav.Link as={Link} to='/user/unregister'>
-									Unregister
-								</Nav.Link>
-							</If>
-							<LogoutLinkPopup username={auth.username} />
+							<SessionDropdown auth={auth} />
 						</If>
 					</Nav>
 				</Navbar.Collapse>
