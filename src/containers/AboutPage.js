@@ -29,7 +29,13 @@ const AboutPage = () => {
 
 			<h3 className='display-5'>Features</h3>
 			<ul>
-				<li>All users can:</li>
+				<li>Unauthenticated users can:</li>
+				<ul>
+					<li>See Home and About pages</li>
+					<li>Register his/her profile</li>
+				</ul>
+
+				<li>'Guest' authenticated user can:</li>
 				<ul>
 					<li>
 						See the Dashboard that contains a summary of the habitants of the
@@ -38,16 +44,18 @@ const AboutPage = () => {
 					<li>Search for habitants given a criteria</li>
 					<li>See an habitant details</li>
 				</ul>
-				<li>
-					Non logged users can:
-					<ul>
-						<li>Register into the application</li>
-					</ul>
-				</li>
-				<li>Logged users can:</li>
+
+				<li>Registered authenticated user can:</li>
+
 				<ul>
+					<li>
+						See the Dashboard that contains a summary of the habitants of the
+						village
+					</li>
+					<li>Search for habitants given a criteria</li>
+					<li>See an habitant details</li>
 					<li>Update his profile</li>
-					<li>Unregister into the application</li>
+					<li>Unregister from the application</li>
 					<li>Link a friend</li>
 					<li>Unlink a friend</li>
 				</ul>

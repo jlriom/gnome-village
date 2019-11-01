@@ -2,6 +2,8 @@ import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import LogoutLinkPopup from "../LogoutLinkPopup";
+import LoginLinkPopup from "../LoginLinkPopup";
+
 import If from "../If";
 
 const AppHeader = ({ auth }) => {
@@ -38,9 +40,7 @@ const AppHeader = ({ auth }) => {
 							<Nav.Link as={Link} to='/user/register'>
 								Register
 							</Nav.Link>
-							<Nav.Link as={Link} to='/auth/login'>
-								Login
-							</Nav.Link>
+							<LoginLinkPopup />
 						</If>
 						<If condition={auth.isLoggedIn}>
 							<Nav.Link as={Link} to='/user/unregister'>
