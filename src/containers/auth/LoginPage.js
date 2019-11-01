@@ -8,13 +8,19 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 const LoginPage = ({ show, handleClose, login }) => {
-	const [userName, setUserName] = useState("foo");
+	const [userName, setUserName] = useState("");
 
 	const handleChange = e => {
 		setUserName(e.target.value);
 	};
-	const handleLogin = () => {
-		login(userName);
+	const handleLogin = event => {
+		const form = event.currentTarget;
+		event.preventDefault();
+		if (form.checkValidity() === false) {
+			event.stopPropagation();
+		} else {
+			login(userName);
+		}
 	};
 
 	return (
@@ -23,9 +29,8 @@ const LoginPage = ({ show, handleClose, login }) => {
 				<Modal.Header closeButton>
 					<Modal.Title>Login</Modal.Title>
 				</Modal.Header>
-
-				<Modal.Body>
-					<Form>
+				<Form onSubmit={handleLogin}>
+					<Modal.Body>
 						<Form.Group controlId='formBasicEmail'>
 							<Form.Label>User Name</Form.Label>
 							<Form.Control
@@ -33,6 +38,7 @@ const LoginPage = ({ show, handleClose, login }) => {
 								placeholder='User name'
 								value={userName}
 								onChange={handleChange}
+								required={true}
 							/>
 							<Form.Text className='text-muted'>
 								<i className='pi pi-info-circle'></i>
@@ -42,17 +48,17 @@ const LoginPage = ({ show, handleClose, login }) => {
 								Brastlewark's habitant.
 							</Form.Text>
 						</Form.Group>
-					</Form>
-				</Modal.Body>
+					</Modal.Body>
 
-				<Modal.Footer>
-					<Button variant='secondary' onClick={handleClose}>
-						Cancel
-					</Button>
-					<Button variant='primary' onClick={handleLogin}>
-						Login
-					</Button>
-				</Modal.Footer>
+					<Modal.Footer>
+						<Button variant='secondary' onClick={handleClose}>
+							Cancel
+						</Button>
+						<Button variant='primary' type='submit'>
+							Login
+						</Button>
+					</Modal.Footer>
+				</Form>
 			</Modal>
 		</PageLayout>
 	);

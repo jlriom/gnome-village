@@ -46,7 +46,7 @@ const AppHeader = ({ auth }) => {
 							<Nav.Link as={Link} to='/user/unregister'>
 								Unregister
 							</Nav.Link>
-							<LogoutLinkPopup />
+							<LogoutLinkPopup username={auth.username} />
 						</If>
 					</Nav>
 				</Navbar.Collapse>
