@@ -1,8 +1,38 @@
 import React from "react";
-import PageLayout from "../../components/layout/PageLayout";
+import { connect } from "react-redux";
+import { logout } from "../../store/actions/authActions";
 
-const LogoutPage = () => {
-	return <PageLayout headerText='Logout'>Logout</PageLayout>;
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+
+const LogoutPage = ({ show, handleClose, logout }) => {
+	const handleLogout = () => {
+		logout();
+	};
+	return (
+		<Modal show={show} onHide={handleClose}>
+			<Modal.Header closeButton>
+				<Modal.Title>Logout</Modal.Title>
+			</Modal.Header>
+
+			<Modal.Body>
+				<p>You are going to logout from the application.</p>
+				<p>Do you want to continue?</p>
+			</Modal.Body>
+
+			<Modal.Footer>
+				<Button variant='secondary' onClick={handleClose}>
+					Cancel
+				</Button>
+				<Button variant='primary' onClick={handleLogout}>
+					Logout
+				</Button>
+			</Modal.Footer>
+		</Modal>
+	);
 };
 
-export default LogoutPage;
+export default connect(
+	() => ({}),
+	{ logout }
+)(LogoutPage);

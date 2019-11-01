@@ -6,10 +6,8 @@ const authReducer = (state = initialState.auth, action) => {
 		case types.AUTH_LOGIN:
 			return {
 				...state,
-				auth: {
-					username: action.username,
-					isLoggedIn: true
-				}
+				username: action.username,
+				isLoggedIn: true
 			};
 		case types.AUTH_LOGOUT:
 			return initialState;

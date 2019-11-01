@@ -1,8 +1,25 @@
 import React from "react";
-import PageLayout from "../../components/layout/PageLayout";
+import { connect } from "react-redux";
+import { login } from "../../store/actions/authActions";
 
-const LoginPage = () => {
-	return <PageLayout headerText='Login'>Login</PageLayout>;
+import PageLayout from "../../components/layout/PageLayout";
+import { Button } from "react-bootstrap";
+
+const LoginPage = ({ login }) => {
+	const handleLogin = () => {
+		login("foo");
+	};
+
+	return (
+		<PageLayout headerText='Login'>
+			<Button variant='primary' onClick={handleLogin}>
+				Login
+			</Button>
+		</PageLayout>
+	);
 };
 
-export default LoginPage;
+export default connect(
+	() => ({}),
+	{ login }
+)(LoginPage);

@@ -68,7 +68,7 @@ const AboutPage = () => {
 					on registered vs anonymous users.
 				</li>
 			</ul>
-			<div className='my-3'>s</div>
+			<div className='my-3'>&nbsp;</div>
 		</PageLayout>
 	);
 };

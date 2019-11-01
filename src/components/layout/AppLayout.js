@@ -18,10 +18,10 @@ import {
 	LogoutPage
 } from "../../containers";
 
-const AppLayout = () => (
+const AppLayout = ({ auth }) => (
 	<div>
 		<Router history={history}>
-			<AppHeader />
+			<AppHeader auth={auth} />
 			<div className='container my-4'>
 				<Switch>
 					<Route exact path='/' component={HomePage} />

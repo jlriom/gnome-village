@@ -30,4 +30,5 @@ export const login = username => async dispatch => {
 
 export const logout = () => dispatch => {
 	dispatch(userLogout());
+	history.push("/");
 };
