@@ -1,6 +1,7 @@
 export default {
 	auth: {
 		username: "",
-		isLoggedIn: false
+		isLoggedIn: false,
+		isGuest: false
 	}
 };

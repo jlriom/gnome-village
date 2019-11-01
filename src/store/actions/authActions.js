@@ -3,9 +3,10 @@ import * as auth from "../../api/auth";
 
 import history from "../../shared/history";
 
-const userLogin = username => ({
+const userLogin = (username, isGuest) => ({
 	type: types.AUTH_LOGIN,
-	username
+	username,
+	isGuest
 });
 
 const userLogout = () => ({
@@ -15,7 +16,7 @@ const userLogout = () => ({
 export const login = username => async dispatch => {
 	try {
 		const userResponse = await auth.login(username);
-		dispatch(userLogin(userResponse));
+		dispatch(userLogin(userResponse.username, userResponse.isGuest));
 		history.push("/dashboard");
 	} catch (error) {
 		alert(error);

@@ -25,9 +25,6 @@ const AppHeader = ({ auth }) => {
 							<Nav.Link as={Link} to='/brastlewark'>
 								Search Habitants
 							</Nav.Link>
-							<Nav.Link as={Link} to='/user/myprofile'>
-								My Profile
-							</Nav.Link>
 						</If>
 						<Nav.Link as={Link} to='/about'>
 							About
@@ -43,9 +40,14 @@ const AppHeader = ({ auth }) => {
 							<LoginLinkPopup />
 						</If>
 						<If condition={auth.isLoggedIn}>
-							<Nav.Link as={Link} to='/user/unregister'>
-								Unregister
-							</Nav.Link>
+							<If condition={!auth.isGuest}>
+								<Nav.Link as={Link} to='/user/myprofile'>
+									My Profile
+								</Nav.Link>
+								<Nav.Link as={Link} to='/user/unregister'>
+									Unregister
+								</Nav.Link>
+							</If>
 							<LogoutLinkPopup username={auth.username} />
 						</If>
 					</Nav>
