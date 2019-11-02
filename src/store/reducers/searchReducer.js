@@ -5,7 +5,6 @@ import { noError, createError } from "../state/errorState";
 const searchReducer = (state = initialState.habitants, action) => {
 	switch (action.type) {
 		case types.SEARCH_HABITANTS_SUCCESS:
-			console.log("searchReducer", action.list);
 			return {
 				...state,
 				list: action.list,

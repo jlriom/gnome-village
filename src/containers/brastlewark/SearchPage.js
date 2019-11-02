@@ -16,7 +16,6 @@ const SearchPage = ({
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	console.log("SearchPage", habitantList);
 	return (
 		<PageLayout>
 			{"Total: " + total} <br />

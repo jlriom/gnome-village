@@ -9,7 +9,6 @@ const login = async name => {
 
 	const user = await getGnomeByName(name);
 	if (user !== null) {
-		console.log("user", user);
 		return { id: user.id, username: name, isGuest: name === GUEST_USER };
 	}
 

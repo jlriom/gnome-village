@@ -1,7 +1,6 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
+import Media from "react-bootstrap/Media";
 import Image from "react-bootstrap/Image";
-import { string } from "postcss-selector-parser";
 
 const HabitantItem = habitant => {
 	const {
@@ -16,38 +15,71 @@ const HabitantItem = habitant => {
 		friends
 	} = habitant.habitant;
 	return (
-		<span className='d-inline-block m-2'>
-			<Card style={{ width: "15rem", height: "40rem" }}>
-				<Image src={thumbnail} rounded style={{ height: "15rem" }} />
-				<Card.Body>
-					<Card.Title style={{ height: "3rem" }}>{name}</Card.Title>
-
-					<small>
-						<b>Age: </b> {age} <br />
-						<b>Hair Color: </b> {hair_color}
-						<br />
-						<b>Weight: </b> {weight.toFixed(3)} <br />
-						<b>Height: </b> {height.toFixed(3)} <br />
-						{professions && (
-							<>
-								<b>Professions: </b>
-								{professions.join(", ")}
-							</>
-						)}
-						<br />
-						{friends && (
-							<>
-								<b>Friends: </b>
-								{friends.join(", ")}
-							</>
-						)}
-						<br />
-					</small>
-					<Card.Link href='#'>Card Link</Card.Link>
-					<Card.Link href='#'>Another Link</Card.Link>
-				</Card.Body>
-			</Card>
-		</span>
+		<>
+			<span className='d-inline-block m-4' key={id}>
+				<Media>
+					<Image
+						className='d-inline-block mx-4'
+						src={thumbnail}
+						alt={name}
+						rounded
+						style={{ height: "10rem", width: "10rem" }}
+					/>
+					<Media.Body style={{ width: "100%" }}>
+						<h5>{name}</h5>
+						<hr />
+						<div className='container'>
+							<small>
+								<div className='row'>
+									<div className='col-lg-4'>
+										<dl className='row'>
+											<dt className='col-sm-5'>Age:</dt>
+											<dd className='col-sm-7'> {age}</dd>
+											<dt className='col-sm-5'>Hair Color:</dt>
+											<dd className='col-sm-7'> {hair_color}</dd>
+											<dt className='col-sm-5'>Weight:</dt>
+											<dd className='col-sm-7'> {weight.toFixed(3)}</dd>
+											<dt className='col-sm-5'>Height:</dt>
+											<dd className='col-sm-7'> {height.toFixed(3)}</dd>
+										</dl>
+									</div>
+									<div className='col-lg-4'>
+										{professions && professions.length > 0 ? (
+											<>
+												<b>Professions </b> <br />
+												{professions.map((profession, index, professions) => (
+													<span key={profession}>
+														{profession}
+														{professions.length - 1 > index ? ", " : ""}
+													</span>
+												))}
+											</>
+										) : (
+											<span></span>
+										)}
+									</div>
+									<div className='col-lg-4'>
+										{friends && friends.length > 0 ? (
+											<>
+												<b>Friends </b> <br />
+												{friends.map((friend, index, friends) => (
+													<span key={friend}>
+														{friend}
+														{friends.length - 1 > index ? ", " : ""}
+													</span>
+												))}
+											</>
+										) : (
+											<span></span>
+										)}
+									</div>
+								</div>
+							</small>
+						</div>
+					</Media.Body>
+				</Media>
+			</span>
+		</>
 	);
 };
 

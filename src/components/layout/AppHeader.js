@@ -9,7 +9,6 @@ import SessionDropdown from "../SessionDropdown";
 import If from "../If";
 
 const AppHeader = ({ auth }) => {
-	console.log("auth", auth);
 	return (
 		<Navbar bg='light' expand='lg'>
 			<div className='container'>
