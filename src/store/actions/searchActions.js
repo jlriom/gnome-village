@@ -2,10 +2,10 @@ import * as types from "./actionTypes";
 import * as readApi from "../../api/brastlewark-read-api";
 import { defaultSearchCriteria } from "../state/searchState";
 
-const searchHabitantsSuccess = (result, searchCriteria) => ({
+const searchHabitantsSuccess = (list, total, searchCriteria) => ({
 	type: types.SEARCH_HABITANTS_SUCCESS,
-	list: result.list,
-	total: result.total,
+	list,
+	total,
 	searchCriteria
 });
 
@@ -19,8 +19,7 @@ export const searchHabitants = (
 ) => async dispatch => {
 	try {
 		const result = await readApi.searchGnomes({ ...searchCriteria });
-		console.log("result", result);
-		dispatch(searchHabitantsSuccess(result, searchCriteria));
+		dispatch(searchHabitantsSuccess(result.list, result.total, searchCriteria));
 	} catch (error) {
 		dispatch(searchHabitantsFail(error));
 	} finally {

@@ -60,9 +60,8 @@ const searchGnomes = async ({
 
 	queryString = expressions.join("&");
 
-	console.log("queryString", queryString);
-	const gnomes = await brastlewarkHttp.searchGnomes(queryString);
-	return gnomes;
+	const result = await brastlewarkHttp.searchGnomes(queryString);
+	return result;
 };
 
 const addExpression = (expressions, parameter, value) => {
