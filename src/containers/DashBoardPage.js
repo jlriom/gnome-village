@@ -8,7 +8,9 @@ import {
 import PageLayout from "../components/layout/PageLayout";
 
 const DashBoardPage = ({
-	stats,
+	habitantsByHairColor,
+	habitantsByProfession,
+	error,
 	loadHabitantsByHairColor,
 	loadHabitantsByProfession
 }) => {
@@ -18,16 +20,18 @@ const DashBoardPage = ({
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+	// TODO error
+
 	return (
 		<PageLayout headerText='Dashboard'>
 			<p>
 				Total of Habitants:
-				{stats.habitantsByHairColor.reduce((total, current) => {
+				{habitantsByHairColor.reduce((total, current) => {
 					return total + current.count;
 				}, 0)}
 			</p>
 			<ul>
-				{stats.habitantsByHairColor.map(hairColor => (
+				{habitantsByHairColor.map(hairColor => (
 					<li key={hairColor.hair_color}>
 						{hairColor.hair_color}, count: {hairColor.count}
 					</li>
@@ -35,7 +39,7 @@ const DashBoardPage = ({
 			</ul>
 
 			<ul>
-				{stats.habitantsByProfession.map(profession => (
+				{habitantsByProfession.map(profession => (
 					<li key={profession.profession}>
 						{profession.profession}, count: {profession.count}
 					</li>
@@ -46,7 +50,9 @@ const DashBoardPage = ({
 };
 
 const mapStateToProps = state => ({
-	stats: state.stats
+	habitantsByHairColor: state.stats.habitantsByHairColor,
+	habitantsByProfession: state.stats.habitantsByProfession,
+	error: state.stats.error
 });
 
 export default connect(
