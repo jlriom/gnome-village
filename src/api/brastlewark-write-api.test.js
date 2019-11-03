@@ -28,16 +28,11 @@ const writeApiTest = async () => {
 	await writeApi.updateGnome(retrievedGnome);
 
 	await writeApi.addFriendToGnome(retrievedGnome.id, "another friend");
-	await writeApi.addProfessionToGnome(retrievedGnome.id, "another profession");
 
 	retrievedGnome = await getGnomeById(gnome.id);
 	console.log(retrievedGnome);
 
 	await writeApi.removeFriendFromGnome(retrievedGnome.id, "another friend");
-	await writeApi.removeProfessionFromGnome(
-		retrievedGnome.id,
-		"another profession"
-	);
 
 	retrievedGnome = await getGnomeById(gnome.id);
 	console.log(retrievedGnome);

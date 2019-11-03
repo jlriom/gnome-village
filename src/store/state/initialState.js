@@ -18,5 +18,10 @@ export default {
 		total: 0,
 		searchCriteria: defaultSearchCriteria,
 		error: noError
+	},
+	user: {
+		professions: [],
+		hairColors: [],
+		error: noError
 	}
 };

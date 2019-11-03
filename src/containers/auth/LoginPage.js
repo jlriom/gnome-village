@@ -33,7 +33,7 @@ const LoginPage = ({ show, handleClose, login }) => {
 				</Modal.Header>
 				<Form onSubmit={handleLogin}>
 					<Modal.Body>
-						<Form.Group controlId='formBasicEmail'>
+						<Form.Group controlId='userName'>
 							<Form.Label>User Name</Form.Label>
 							<Form.Control
 								type='text'

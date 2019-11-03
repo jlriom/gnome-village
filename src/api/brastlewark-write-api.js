@@ -29,31 +29,10 @@ const removeFriendFromGnome = async (id, friendName) => {
 	}
 };
 
-const addProfessionToGnome = async (id, professionName) => {
-	const gnome = await brastlewarkHttp.getGnomeById(id);
-	if (gnome) {
-		gnome.professions = [...new Set([...gnome.professions, professionName])];
-		await brastlewarkHttp.updateGnome(gnome);
-	}
-};
-
-const removeProfessionFromGnome = async (id, professionName) => {
-	const gnome = await brastlewarkHttp.getGnomeById(id);
-	if (gnome) {
-		const professions = gnome.professions.filter(
-			profession => profession !== professionName
-		);
-		gnome.professions = professions;
-		await brastlewarkHttp.updateGnome(gnome);
-	}
-};
-
 export {
 	createGnome,
 	updateGnome,
 	deleteGnome,
 	addFriendToGnome,
-	removeFriendFromGnome,
-	addProfessionToGnome,
-	removeProfessionFromGnome
+	removeFriendFromGnome
 };
