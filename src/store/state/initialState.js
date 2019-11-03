@@ -20,8 +20,11 @@ export default {
 		error: noError
 	},
 	user: {
+		id: null,
+		myProfile: {},
 		professions: [],
 		hairColors: [],
+		myFriends: [],
 		error: noError
 	}
 };
