@@ -38,24 +38,23 @@ const AboutPage = () => {
 				<li>'Guest' authenticated user can:</li>
 				<ul>
 					<li>
-						See the Dashboard that contains a summary of the habitants of the
-						village
+						See the Dashboard that contains a summary of demographics of the
+						habitants of the village
 					</li>
 					<li>Search for habitants given a criteria</li>
-					<li>See an habitant details</li>
 				</ul>
 
 				<li>Registered authenticated user can:</li>
 
 				<ul>
 					<li>
-						See the Dashboard that contains a summary of the habitants of the
-						village
+						See the Dashboard that contains a summary of demographics of the
+						habitants of the village
 					</li>
 					<li>Search for habitants given a criteria</li>
-					<li>See an habitant details</li>
 					<li>Update his profile</li>
 					<li>Unregister from the application</li>
+					<li>See a list of his/her friends</li>
 					<li>Link a friend</li>
 					<li>Unlink a friend</li>
 				</ul>

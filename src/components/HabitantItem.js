@@ -1,6 +1,7 @@
 import React from "react";
 import Media from "react-bootstrap/Media";
 import Image from "react-bootstrap/Image";
+import LazyLoad from "react-lazyload";
 
 const HabitantItem = habitant => {
 	const {
@@ -18,13 +19,15 @@ const HabitantItem = habitant => {
 		<>
 			<span className='d-inline-block m-4' key={id}>
 				<Media>
-					<Image
-						className='d-inline-block mx-4'
-						src={thumbnail}
-						alt={name}
-						rounded
-						style={{ height: "10rem", width: "10rem" }}
-					/>
+					<LazyLoad once>
+						<Image
+							className='d-inline-block mx-4'
+							src={thumbnail}
+							alt={name}
+							rounded
+							style={{ height: "10rem", width: "10rem" }}
+						/>
+					</LazyLoad>
 					<Media.Body style={{ width: "100%" }}>
 						<h5>{name}</h5>
 						<hr />
