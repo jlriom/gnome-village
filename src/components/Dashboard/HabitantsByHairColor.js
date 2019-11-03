@@ -9,6 +9,7 @@ const HabitantsByHairColor = ({ habitantsByHairColor }) => (
 		</li>
 		{habitantsByHairColor.map(hairColor => (
 			<CategoryItem
+				key={hairColor.hair_color}
 				category={hairColor.hair_color}
 				count={hairColor.count}></CategoryItem>
 		))}

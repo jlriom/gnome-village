@@ -13,8 +13,7 @@ const SearchPage = ({
 }) => {
 	useEffect(() => {
 		searchHabitants(searchCriteria);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [searchHabitants, searchCriteria]);
 
 	return (
 		<PageLayout>

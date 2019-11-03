@@ -9,6 +9,7 @@ const HabitantsByProfession = ({ habitantsByProfession }) => (
 		</li>
 		{habitantsByProfession.map(profession => (
 			<CategoryItem
+				key={profession.profession}
 				category={profession.profession}
 				count={profession.count}></CategoryItem>
 		))}

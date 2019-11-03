@@ -23,8 +23,7 @@ const DashBoardPage = ({
 	useEffect(() => {
 		loadHabitantsByHairColor();
 		loadHabitantsByProfession();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [loadHabitantsByHairColor, loadHabitantsByProfession]);
 
 	return (
 		<PageLayout headerText='Dashboard'>

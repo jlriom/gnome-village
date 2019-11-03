@@ -29,6 +29,11 @@ const RegisterPage = ({
 		professions: []
 	});
 
+	useEffect(() => {
+		loadHabitantsProfessions();
+		loadHabitantsHairColors();
+	}, [loadHabitantsProfessions, loadHabitantsHairColors]);
+
 	const handleInputChange = e => {
 		const { name, value } = e.target;
 		console.log(
@@ -58,12 +63,6 @@ const RegisterPage = ({
 			});
 		}
 	};
-
-	useEffect(() => {
-		loadHabitantsProfessions();
-		loadHabitantsHairColors();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
 
 	return (
 		<Modal show={show} onHide={handleClose}>
