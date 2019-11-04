@@ -12,8 +12,8 @@ const unRegistermeFail = error => ({
 
 export const unRegisterme = id => async dispatch => {
 	try {
-		const myprofile = await deleteGnome(id);
-		dispatch(unRegistermeSuccess(myprofile));
+		await deleteGnome(id);
+		dispatch(unRegistermeSuccess());
 	} catch (error) {
 		dispatch(unRegistermeFail(error));
 	} finally {

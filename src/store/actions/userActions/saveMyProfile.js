@@ -1,9 +1,9 @@
 import * as types from "../actionTypes";
 import { updateGnome } from "../../../api/brastlewark-write-api";
 
-const saveMyProfileSuccess = myProfile => ({
+const saveMyProfileSuccess = profile => ({
 	type: types.SAVE_MY_HAB_DETAILS_SUCCESS,
-	myProfile
+	profile
 });
 
 const saveMyProfileFail = error => ({

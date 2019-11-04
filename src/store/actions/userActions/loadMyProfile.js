@@ -1,9 +1,9 @@
 import * as types from "../actionTypes";
 import { getGnomeById } from "../../../api/brastlewark-read-api";
 
-const loadMyProfileSuccess = myProfile => ({
+const loadMyProfileSuccess = profile => ({
 	type: types.LOAD_MY_HAB_DETAILS_SUCCESS,
-	myProfile
+	profile
 });
 
 const loadMyProfileFail = error => ({
@@ -13,8 +13,8 @@ const loadMyProfileFail = error => ({
 
 export const loadMyProfile = id => async dispatch => {
 	try {
-		const myprofile = await getGnomeById(id);
-		dispatch(loadMyProfileSuccess(myprofile));
+		const profile = await getGnomeById(id);
+		dispatch(loadMyProfileSuccess(profile));
 	} catch (error) {
 		dispatch(loadMyProfileFail(error));
 	} finally {

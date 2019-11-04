@@ -16,9 +16,9 @@ const loadMyFriendsFail = error => ({
 
 export const loadMyFriends = id => async dispatch => {
 	try {
-		const myprofile = await getGnomeById(id);
+		const profile = await getGnomeById(id);
 
-		const myFriends = myprofile.friends.map(async friend => {
+		const myFriends = profile.friends.map(async friend => {
 			return await getGnomeByName(friend);
 		});
 
