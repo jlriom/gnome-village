@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Select from "react-select";
 
 const HabitantDetails = ({
+	id,
 	mode,
 	profile,
 	professions,
@@ -14,9 +15,11 @@ const HabitantDetails = ({
 	loadHabitantsProfessions,
 	loadHabitantsHairColors,
 	loadProfile,
-	registerUser
+	registerUser,
+	saveProfile
 }) => {
 	const [values, setValues] = useState({
+		id: 0,
 		name: "",
 		thumbnail: "",
 		age: 0,
@@ -35,10 +38,12 @@ const HabitantDetails = ({
 	}, [loadHabitantsHairColors]);
 
 	useEffect(() => {
-		if (show) {
+		if (id) {
+			loadProfile(id);
+		} else {
 			loadProfile();
 		}
-	}, [loadProfile, show]);
+	}, [loadProfile, id]);
 
 	useEffect(() => {
 		setValues({ ...profile, hairColor: profile.hair_color });
@@ -73,6 +78,17 @@ const HabitantDetails = ({
 			}
 			if (registerUser) {
 				registerUser({
+					name: values.name,
+					thumbnail: values.thumbnail,
+					age: parseFloat(values.age),
+					weight: parseFloat(values.weight),
+					height: parseFloat(values.height),
+					hair_color: values.hairColor,
+					professions: values.professions
+				});
+			} else if (saveProfile) {
+				saveProfile({
+					id: values.id,
 					name: values.name,
 					thumbnail: values.thumbnail,
 					age: parseFloat(values.age),
