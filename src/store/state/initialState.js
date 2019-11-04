@@ -1,5 +1,6 @@
 import { noError } from "./errorState";
 import { defaultSearchCriteria } from "./searchState";
+import { defaultProfile } from "./profileState";
 
 export default {
 	auth: {
@@ -21,7 +22,7 @@ export default {
 	},
 	user: {
 		id: null,
-		myProfile: {},
+		profile: defaultProfile,
 		professions: [],
 		hairColors: [],
 		myFriends: [],

@@ -13,9 +13,15 @@ Array.prototype.groupBy = function(prop) {
 const getHairColors = async () => {
 	const gnomes = await brastlewarkHttp.getAllGnomes();
 	const gnomesByHairColor = gnomes.list.groupBy("hair_color");
-	return Object.entries(gnomesByHairColor).map(entry => {
-		return { hair_color: entry[0], count: entry[1].length };
-	});
+	return Object.entries(gnomesByHairColor)
+		.map(entry => {
+			return { hair_color: entry[0], count: entry[1].length };
+		})
+		.sort((a, b) => {
+			if (a.hair_color.trim() > b.hair_color.trim()) return 1;
+			if (b.hair_color.trim() > a.hair_color.trim()) return -1;
+			return 0;
+		});
 };
 
 const getProfessions = async () => {
@@ -35,7 +41,11 @@ const getProfessions = async () => {
 				.count++
 	);
 
-	return gnomesByProfession;
+	return gnomesByProfession.sort((a, b) => {
+		if (a.profession.trim() > b.profession.trim()) return 1;
+		if (b.profession.trim() > a.profession.trim()) return -1;
+		return 0;
+	});
 };
 
 const searchGnomes = async ({

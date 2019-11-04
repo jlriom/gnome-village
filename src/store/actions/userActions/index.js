@@ -1,21 +1,21 @@
 import { addFriend } from "./addFriend";
 import { loadHabitantsHairColors } from "./loadHabitantsHairColors";
 import { loadHabitantsProfessions } from "./loadHabitantsProfessions";
-import { loadMyFriends } from "./loadMyFriends";
-import { loadMyProfile } from "./loadMyProfile";
+import { loadFriends } from "./loadFriends";
+import { loadProfile } from "./loadProfile";
 import { registerUser } from "./registerUser";
 import { removeFriend } from "./removeFriend";
-import { saveMyProfile } from "./saveMyProfile";
+import { saveProfile } from "./saveProfile";
 import { unRegisterme } from "./unRegisterme";
 
 export {
 	addFriend,
 	loadHabitantsHairColors,
 	loadHabitantsProfessions,
-	loadMyFriends,
+	loadFriends,
 	registerUser,
 	removeFriend,
-	loadMyProfile,
-	saveMyProfile,
+	loadProfile,
+	saveProfile,
 	unRegisterme
 };

@@ -21,16 +21,16 @@ const userReducer = (state = initialState.user, action) => {
 				professions: action.professions,
 				error: noError
 			};
-		case types.LOAD_MY_FRIENDS_SUCCESS:
+		case types.LOAD_FRIENDS_SUCCESS:
 			return {
 				...state,
-				myFriends: action.myFriends,
+				friends: action.friends,
 				error: noError
 			};
-		case types.LOAD_MY_HAB_DETAILS_SUCCESS:
+		case types.LOAD_HAB_DETAILS_SUCCESS:
 			return {
 				...state,
-				myProfile: action.myProfile,
+				profile: action.profile,
 				error: noError
 			};
 
@@ -45,10 +45,10 @@ const userReducer = (state = initialState.user, action) => {
 				...state,
 				error: noError
 			};
-		case types.SAVE_MY_HAB_DETAILS_SUCCESS:
+		case types.SAVE_HAB_DETAILS_SUCCESS:
 			return {
 				...state,
-				myProfile: action.myProfile,
+				profile: action.profile,
 				error: noError
 			};
 
@@ -57,9 +57,9 @@ const userReducer = (state = initialState.user, action) => {
 		case types.REGISTERME_AS_HAB_FAIL:
 		case types.REGISTERME_AS_HAB_EXISTS_FAIL:
 		case types.UNREGISTERME_AS_HAB_FAIL:
-		case types.LOAD_MY_HAB_DETAILS_FAIL:
-		case types.SAVE_MY_HAB_DETAILS_FAIL:
-		case types.LOAD_MY_FRIENDS_FAIL:
+		case types.LOAD_HAB_DETAILS_FAIL:
+		case types.SAVE_HAB_DETAILS_FAIL:
+		case types.LOAD_FRIENDS_FAIL:
 		case types.ADD_FRIEND_FAIL:
 		case types.REMOVE_FRIEND_FAIL:
 			return {

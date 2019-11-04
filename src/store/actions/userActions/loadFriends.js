@@ -4,17 +4,17 @@ import {
 	getGnomeByName
 } from "../../../api/brastlewark-read-api";
 
-const loadMyFriendsSuccess = myFriends => ({
-	type: types.LOAD_MY_HAB_DETAILS_SUCCESS,
+const loadFriendsSuccess = myFriends => ({
+	type: types.LOAD_HAB_DETAILS_SUCCESS,
 	myFriends
 });
 
-const loadMyFriendsFail = error => ({
-	type: types.LOAD_MY_HAB_DETAILS_FAIL,
+const loadFriendsFail = error => ({
+	type: types.LOAD_HAB_DETAILS_FAIL,
 	error
 });
 
-export const loadMyFriends = id => async dispatch => {
+export const loadFriends = id => async dispatch => {
 	try {
 		const profile = await getGnomeById(id);
 
@@ -22,9 +22,9 @@ export const loadMyFriends = id => async dispatch => {
 			return await getGnomeByName(friend);
 		});
 
-		dispatch(loadMyFriendsSuccess(myFriends));
+		dispatch(loadFriendsSuccess(myFriends));
 	} catch (error) {
-		dispatch(loadMyFriendsFail(error));
+		dispatch(loadFriendsFail(error));
 	} finally {
 	}
 };
