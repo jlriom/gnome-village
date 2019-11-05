@@ -6,7 +6,7 @@ import {
 	loadHabitantsHairColors,
 	loadProfile
 } from "../../store/actions/userActions";
-import HabitantDetails from "../../components/HabitantDetails";
+import HabitantDetailsEdit from "../../components/HabitantDetailsEdit";
 
 const RegisterPage = ({
 	profile,
@@ -21,7 +21,7 @@ const RegisterPage = ({
 	registerUser
 }) => {
 	return (
-		<HabitantDetails
+		<HabitantDetailsEdit
 			mode={{ mode: "create", title: "Register", submitCaption: "Register" }}
 			profile={profile}
 			professions={professions}

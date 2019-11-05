@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import Select from "react-select";
 import { defaultProfile } from "../store/state/profileState";
 
-const HabitantDetails = ({
+const HabitantDetailsEdit = ({
 	id,
 	mode,
 	profile,
@@ -248,4 +248,4 @@ const HabitantDetails = ({
 	);
 };
 
-export default HabitantDetails;
+export default HabitantDetailsEdit;

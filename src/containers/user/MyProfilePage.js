@@ -6,7 +6,7 @@ import {
 	loadHabitantsHairColors,
 	loadProfile
 } from "../../store/actions/userActions";
-import HabitantDetails from "../../components/HabitantDetails";
+import HabitantDetailsEdit from "../../components/HabitantDetailsEdit";
 
 const MyProfilePage = ({
 	id,
@@ -22,7 +22,7 @@ const MyProfilePage = ({
 	saveProfile
 }) => {
 	return (
-		<HabitantDetails
+		<HabitantDetailsEdit
 			mode={{ mode: "edit", title: "My profile", submitCaption: "Save" }}
 			id={id}
 			profile={profile}
