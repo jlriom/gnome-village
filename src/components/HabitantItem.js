@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Media from "react-bootstrap/Media";
 import Image from "react-bootstrap/Image";
 import LazyLoad from "react-lazyload";
@@ -68,7 +69,7 @@ const HabitantItem = ({ habitant }) => {
 												<b>Friends </b> <br />
 												{friends.map((friend, index, friends) => (
 													<span key={friend}>
-														{friend}
+														<Link to={`/brastlewark/${friend}`}>{friend}</Link>
 														{friends.length - 1 > index ? ", " : ""}
 													</span>
 												))}

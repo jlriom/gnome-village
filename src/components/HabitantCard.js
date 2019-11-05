@@ -2,6 +2,13 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import LazyLoad from "react-lazyload";
 
+const ProfessionItem = ({ profession }) => (
+	<>
+		<dt className='col-sm-6'>&nbsp;</dt>
+		<dd className='col-sm-6 '>{profession}</dd>
+	</>
+);
+
 const HabitantCard = ({ habitant }) => {
 	const {
 		name,
@@ -22,39 +29,32 @@ const HabitantCard = ({ habitant }) => {
 				</LazyLoad>
 				<Card.Body>
 					<Card.Title>{name}</Card.Title>
-					<Card.Text>
-						<div className='container'>
-							<dl className='row'>
-								<dt className='col-sm-5'>Age:</dt>
-								<dd className='col-sm-7'> {age}</dd>
-								<dt className='col-sm-5'>Hair Color:</dt>
-								<dd className='col-sm-7'> {hair_color}</dd>
-								<dt className='col-sm-5'>Weight:</dt>
-								<dd className='col-sm-7'> {weight.toFixed(3)}</dd>
-								<dt className='col-sm-5'>Height:</dt>
-								<dd className='col-sm-7'> {height.toFixed(3)}</dd>
-							</dl>
-							<hr></hr>
-							<div className='row'>
-								{professions && professions.length > 0 ? (
-									<>
-										<dt className='col-sm-12'> Professions: </dt>{" "}
-										{professions.map((profession, index, professions) => (
-											<>
-												<dt className='col-sm-5'> </dt>
-												<dd className='col-sm-7' key={profession}>
-													{profession}
-												</dd>
-												<br />
-											</>
-										))}
-									</>
-								) : (
-									<span></span>
-								)}
-							</div>
+					<div className='container' style={{ weight: "100%" }}>
+						<dl className='row'>
+							<dt className='col-sm-6'>Age:</dt>
+							<dd className='col-sm-6'> {age}</dd>
+							<dt className='col-sm-6'>Hair Color:</dt>
+							<dd className='col-sm-6'> {hair_color}</dd>
+							<dt className='col-sm-6'>Weight:</dt>
+							<dd className='col-sm-6'> {weight.toFixed(3)}</dd>
+							<dt className='col-sm-6'>Height:</dt>
+							<dd className='col-sm-6'> {height.toFixed(3)}</dd>
+						</dl>
+						<hr></hr>
+						<div className='row'>
+							{professions && professions.length > 0 ? (
+								<dl className='row'>
+									<dt className='col-sm-6'>Professions:</dt>
+									<dd className='col-sm-6'> &nbsp;</dd>
+									{professions.map((profession, index) => (
+										<ProfessionItem key={index} profession={profession} />
+									))}
+								</dl>
+							) : (
+								<span></span>
+							)}
 						</div>
-					</Card.Text>
+					</div>
 				</Card.Body>
 			</Card>
 		</>

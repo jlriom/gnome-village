@@ -16,7 +16,13 @@ const loadFriendsFail = error => ({
 
 export const loadFriends = id => async dispatch => {
 	try {
-		const profile = await getGnomeById(id);
+		let profile;
+		if (!isNaN(id)) {
+			profile = await getGnomeById(id);
+		} else {
+			const name = id;
+			profile = await getGnomeByName(name);
+		}
 
 		const friends = await Promise.all(
 			profile.friends.map(friend => {

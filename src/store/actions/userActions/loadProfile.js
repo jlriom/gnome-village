@@ -1,5 +1,8 @@
 import * as types from "../actionTypes";
-import { getGnomeById } from "../../../api/brastlewark-read-api";
+import {
+	getGnomeById,
+	getGnomeByName
+} from "../../../api/brastlewark-read-api";
 import { defaultProfile } from "../../state/profileState";
 
 const loadProfileSuccess = profile => ({
@@ -14,11 +17,15 @@ const loadProfileFail = error => ({
 
 export const loadProfile = id => async dispatch => {
 	try {
-		if (!isNaN(id)) {
+		if (id === null) {
+			dispatch(loadProfileSuccess(defaultProfile));
+		} else if (!isNaN(id)) {
 			const profile = await getGnomeById(id);
 			dispatch(loadProfileSuccess(profile));
 		} else {
-			dispatch(loadProfileSuccess(defaultProfile));
+			const name = id;
+			const profile = await getGnomeByName(name);
+			dispatch(loadProfileSuccess(profile));
 		}
 	} catch (error) {
 		dispatch(loadProfileFail(error));

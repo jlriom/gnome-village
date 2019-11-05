@@ -33,7 +33,7 @@ const HabitantDetailsEdit = ({
 		if (!isNaN(id)) {
 			loadProfile(id);
 		} else {
-			loadProfile();
+			loadProfile(null);
 		}
 	}, [loadProfile, id]);
 
