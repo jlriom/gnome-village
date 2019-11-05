@@ -38,6 +38,7 @@ const userReducer = (state = initialState.user, action) => {
 			return {
 				...state,
 				id: action.id,
+				profile: initialState.defaultProfile,
 				error: noError
 			};
 		case types.REMOVE_FRIEND_SUCCESS:
@@ -48,12 +49,16 @@ const userReducer = (state = initialState.user, action) => {
 		case types.SAVE_HAB_DETAILS_SUCCESS:
 			return {
 				...state,
-				profile: action.profile,
+				profile: initialState.defaultProfile,
 				error: noError
 			};
 
 		case types.UNREGISTERME_AS_HAB_SUCCESS:
-			return initialState;
+			return {
+				...state,
+				profile: initialState.defaultProfile,
+				error: noError
+			};
 		case types.REGISTERME_AS_HAB_FAIL:
 		case types.REGISTERME_AS_HAB_EXISTS_FAIL:
 		case types.UNREGISTERME_AS_HAB_FAIL:

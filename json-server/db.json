@@ -24328,31 +24328,6 @@
         "Malbin Magnaweaver",
         "Malbin Wrongrivet"
       ]
-    },
-    {
-      "name": "xxx",
-      "thumbnail": "http://x.orgxxxx",
-      "age": "1",
-      "weight": "2",
-      "height": "3",
-      "hair_color": "Green",
-      "professions": [
-        "Brewer"
-      ],
-      "id": 1337
-    },
-    {
-      "name": "lolo",
-      "thumbnail": "http://x.org",
-      "age": 0.7,
-      "weight": 34,
-      "height": 543,
-      "hair_color": "Gray",
-      "professions": [
-        "Metalworker",
-        "Woodcarver"
-      ],
-      "id": 1338
     }
   ]
 }

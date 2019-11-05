@@ -3,6 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Select from "react-select";
+import { defaultProfile } from "../store/state/profileState";
 
 const HabitantDetails = ({
 	id,
@@ -18,16 +19,7 @@ const HabitantDetails = ({
 	registerUser,
 	saveProfile
 }) => {
-	const [values, setValues] = useState({
-		id: 0,
-		name: "",
-		thumbnail: "",
-		age: 0,
-		weight: 0,
-		height: 0,
-		hairColor: "",
-		professions: []
-	});
+	const [values, setValues] = useState(defaultProfile);
 
 	useEffect(() => {
 		loadHabitantsProfessions();
@@ -38,7 +30,7 @@ const HabitantDetails = ({
 	}, [loadHabitantsHairColors]);
 
 	useEffect(() => {
-		if (id) {
+		if (!isNaN(id)) {
 			loadProfile(id);
 		} else {
 			loadProfile();
@@ -46,7 +38,7 @@ const HabitantDetails = ({
 	}, [loadProfile, id]);
 
 	useEffect(() => {
-		setValues({ ...profile, hairColor: profile.hair_color });
+		if (profile) setValues({ ...profile, hairColor: profile.hair_color });
 	}, [profile]);
 
 	const handleStringInputChange = e => {
@@ -98,6 +90,7 @@ const HabitantDetails = ({
 					professions: values.professions
 				});
 			}
+			handleClose();
 		}
 	};
 
@@ -147,6 +140,7 @@ const HabitantDetails = ({
 											value={values.name}
 											onChange={handleStringInputChange}
 											required={true}
+											disabled={!isNaN(id) ? "disabled" : ""}
 										/>
 									</Form.Group>
 								</div>

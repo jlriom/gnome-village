@@ -14,12 +14,10 @@ const loadProfileFail = error => ({
 
 export const loadProfile = id => async dispatch => {
 	try {
-		if (id) {
-			alert("loadProfileID");
+		if (!isNaN(id)) {
 			const profile = await getGnomeById(id);
 			dispatch(loadProfileSuccess(profile));
 		} else {
-			alert("loadProfile");
 			dispatch(loadProfileSuccess(defaultProfile));
 		}
 	} catch (error) {

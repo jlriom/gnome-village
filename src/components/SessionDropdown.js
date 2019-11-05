@@ -39,7 +39,7 @@ const SessionDropdown = ({ auth }) => {
 
 				{!auth.isGuest && (
 					<NavDropdown.Item onClick={() => setShowUnregisterPage(true)}>
-						Unregister
+						Unregister my profile
 					</NavDropdown.Item>
 				)}
 				{!auth.isGuest && <NavDropdown.Divider />}
