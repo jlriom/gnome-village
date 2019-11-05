@@ -32,7 +32,7 @@ const SessionDropdown = ({ auth }) => {
 
 				{!auth.isGuest && (
 					<NavDropdown.Item
-						onClick={() => history.push(`/brastlewark/${auth.id}`)}>
+						onClick={() => history.push(`/brastlewark/friends`)}>
 						My Friends
 					</NavDropdown.Item>
 				)}

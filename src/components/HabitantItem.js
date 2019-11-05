@@ -3,7 +3,7 @@ import Media from "react-bootstrap/Media";
 import Image from "react-bootstrap/Image";
 import LazyLoad from "react-lazyload";
 
-const HabitantItem = habitant => {
+const HabitantItem = ({ habitant }) => {
 	const {
 		id,
 		name,
@@ -14,7 +14,8 @@ const HabitantItem = habitant => {
 		hair_color,
 		professions,
 		friends
-	} = habitant.habitant;
+	} = habitant;
+
 	return (
 		<>
 			<span className='d-inline-block m-4' key={id}>

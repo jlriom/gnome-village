@@ -10,7 +10,8 @@ import {
 	AboutPage,
 	NotFoundPage,
 	SearchPage,
-	HabitantPage
+	HabitantPage,
+	FriendsPage
 } from "../../containers";
 
 const AnonymousRouting = () => {
@@ -29,6 +30,7 @@ const AuthenticatedRouting = () => {
 			<Route exact path='/' component={HomePage} />
 			<Route exact path='/dashboard' component={DashBoardPage} />
 			<Route exact path='/brastlewark' component={SearchPage} />
+			<Route exact path='/brastlewark/friends' component={FriendsPage} />
 			<Route exact path='/brastlewark/:id' component={HabitantPage} />
 			<Route exact path='/about' component={AboutPage} />
 			<Route component={NotFoundPage} />

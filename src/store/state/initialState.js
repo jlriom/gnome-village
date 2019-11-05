@@ -25,7 +25,7 @@ export default {
 		profile: defaultProfile,
 		professions: [],
 		hairColors: [],
-		myFriends: [],
+		friends: [],
 		error: noError
 	}
 };
