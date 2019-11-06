@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Media from "react-bootstrap/Media";
 import Image from "react-bootstrap/Image";
 import LazyLoad from "react-lazyload";
+import "./HabitantItem.css";
 
 const HabitantItem = ({ habitant }) => {
 	const {
@@ -20,24 +21,24 @@ const HabitantItem = ({ habitant }) => {
 	return (
 		<>
 			<span className='d-inline-block m-4' key={id}>
-				<Media>
+				<Media className='full-width'>
 					<LazyLoad once>
 						<Image
-							className='d-inline-block mx-4'
+							className='d-inline-block mx-4 image-dimensions'
 							src={thumbnail}
 							alt={name}
 							rounded
 							style={{ height: "10rem", width: "10rem" }}
 						/>
 					</LazyLoad>
-					<Media.Body style={{ width: "100%" }}>
+					<Media.Body className='full-width'>
 						<h5>{name}</h5>
 						<hr />
 						<div className='container'>
 							<small>
 								<div className='row'>
 									<div className='col-lg-4'>
-										<dl className='row'>
+										<dl className='row full-width'>
 											<dt className='col-sm-5'>Age:</dt>
 											<dd className='col-sm-7'> {age}</dd>
 											<dt className='col-sm-5'>Hair Color:</dt>
@@ -50,32 +51,32 @@ const HabitantItem = ({ habitant }) => {
 									</div>
 									<div className='col-lg-4'>
 										{professions && professions.length > 0 ? (
-											<>
-												<b>Professions </b> <br />
+											<div className='row full-width'>
+												<b>Professions: </b>&nbsp;
 												{professions.map((profession, index, professions) => (
 													<span key={profession}>
 														{profession}
 														{professions.length - 1 > index ? ", " : ""}
 													</span>
 												))}
-											</>
+											</div>
 										) : (
-											<span></span>
+											<span className='row full-width'></span>
 										)}
 									</div>
 									<div className='col-lg-4'>
 										{friends && friends.length > 0 ? (
-											<>
-												<b>Friends </b> <br />
+											<div className='row full-width'>
+												<b>Friends: </b> &nbsp;
 												{friends.map((friend, index, friends) => (
 													<span key={friend}>
 														<Link to={`/brastlewark/${friend}`}>{friend}</Link>
 														{friends.length - 1 > index ? ", " : ""}
 													</span>
 												))}
-											</>
+											</div>
 										) : (
-											<span></span>
+											<span className='row full-width'></span>
 										)}
 									</div>
 								</div>
