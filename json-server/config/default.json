@@ -1,4 +1,4 @@
 {
 	"dbData": "json-server\\db.json",
-	"delay": 0
+	"delay": 2000
 }

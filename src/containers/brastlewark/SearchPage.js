@@ -51,7 +51,6 @@ const SearchPage = ({
 
 	const numPages = (searchCriteria, total) => {
 		const numPages = Math.trunc(total / searchCriteria.limit);
-		console.log(numPages, numPages * searchCriteria.limit, total);
 		return numPages * searchCriteria.limit === total ? numPages : numPages + 1;
 	};
 
@@ -93,7 +92,7 @@ const SearchPage = ({
 				<div className='row mt-5'>
 					<div className='col center-block'>
 						<div
-							class='flexBox'
+							className='flexBox'
 							style={{
 								display: "flex",
 								flexFlow: "row wrap",
