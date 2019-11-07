@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import history from "../shared/history";
 import { NavDropdown } from "react-bootstrap";
 import LogoutPage from "../containers/auth/LogoutPage";
@@ -49,6 +50,10 @@ const SessionDropdown = ({ auth }) => {
 			</NavDropdown>
 		</>
 	);
+};
+
+SessionDropdown.propTypes = {
+	auth: PropTypes.object.isRequired
 };
 
 export default SessionDropdown;

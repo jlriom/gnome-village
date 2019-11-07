@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import PropTypes from "prop-types";
 import {
 	operationInProgress,
 	operationDone,
@@ -15,6 +16,10 @@ const unRegistermeFail = error => ({
 	error
 });
 
+unRegistermeFail.propTypes = {
+	profile: PropTypes.object.isRequired
+};
+
 export const unRegisterme = id => async dispatch => {
 	try {
 		dispatch(operationInProgress());
@@ -27,4 +32,8 @@ export const unRegisterme = id => async dispatch => {
 	} finally {
 		dispatch(operationDone());
 	}
+};
+
+unRegistermeFail.propTypes = {
+	id: PropTypes.number.isRequired
 };

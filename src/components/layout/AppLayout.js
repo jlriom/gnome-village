@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 import { Router, Route, Switch } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -66,6 +67,12 @@ const AppLayout = ({ auth, loading, message }) => {
 			</Router>
 		</div>
 	);
+};
+
+AppLayout.propTypes = {
+	auth: PropTypes.object.isRequired,
+	loading: PropTypes.bool.isRequired,
+	message: PropTypes.object
 };
 
 export default AppLayout;

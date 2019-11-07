@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import CategoryItem from "./CategoryItem";
 
@@ -15,5 +16,9 @@ const HabitantsByHairColor = ({ habitantsByHairColor }) => (
 		))}
 	</ul>
 );
+
+HabitantsByHairColor.propTypes = {
+	habitantsByHairColor: PropTypes.array.isRequired
+};
 
 export default HabitantsByHairColor;

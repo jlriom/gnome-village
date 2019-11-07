@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const TotalSection = ({ habitantsByHairColor }) => (
 	<ul className='list-group my-4'>
@@ -18,5 +19,9 @@ const TotalSection = ({ habitantsByHairColor }) => (
 		</li>
 	</ul>
 );
+
+TotalSection.propTypes = {
+	habitantsByHairColor: PropTypes.array.isRequired
+};
 
 export default TotalSection;

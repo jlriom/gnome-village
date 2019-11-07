@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import PageLayout from "./layout/PageLayout";
 import HabitantItem from "./HabitantItem";
 import HabitantCard from "./HabitantCard";
@@ -22,6 +23,11 @@ const HabitantDetails = ({ profile, friends }) => {
 			</div>
 		</PageLayout>
 	);
+};
+
+HabitantDetails.propTypes = {
+	profile: PropTypes.object.isRequired,
+	friends: PropTypes.array.isRequired
 };
 
 export default HabitantDetails;

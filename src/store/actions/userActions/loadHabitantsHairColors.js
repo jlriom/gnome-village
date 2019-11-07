@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import PropTypes from "prop-types";
 import {
 	operationInProgress,
 	operationDone,
@@ -10,6 +11,10 @@ const loadHabitantsHairColorsSuccess = hairColors => ({
 	type: types.LOAD_HAB_HAIR_COLORS_SUCCESS,
 	hairColors
 });
+
+loadHabitantsHairColorsSuccess.propTypes = {
+	hairColors: PropTypes.array.isRequired
+};
 
 export const loadHabitantsHairColors = () => async dispatch => {
 	try {

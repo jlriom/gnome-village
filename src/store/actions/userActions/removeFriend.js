@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import PropTypes from "prop-types";
 import {
 	operationInProgress,
 	operationDone,
@@ -15,6 +16,10 @@ const removeFriendFail = error => ({
 	error
 });
 
+removeFriendFail.propTypes = {
+	error: PropTypes.object.isRequired
+};
+
 export const removeFriend = (id, friend) => async dispatch => {
 	try {
 		dispatch(operationInProgress());
@@ -27,4 +32,9 @@ export const removeFriend = (id, friend) => async dispatch => {
 	} finally {
 		dispatch(operationDone());
 	}
+};
+
+removeFriend.propTypes = {
+	id: PropTypes.number.isRequired,
+	friend: PropTypes.object.isRequired
 };

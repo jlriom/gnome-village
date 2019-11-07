@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import LoginLinkPopup from "../LoginLinkPopup";
@@ -46,6 +47,10 @@ const AppHeader = ({ auth }) => {
 			</div>
 		</Navbar>
 	);
+};
+
+AppHeader.propTypes = {
+	auth: PropTypes.object.isRequired
 };
 
 export default AppHeader;

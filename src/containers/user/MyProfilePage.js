@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import {
 	saveProfile,
@@ -13,7 +14,6 @@ const MyProfilePage = ({
 	profile,
 	professions,
 	hairColors,
-	error,
 	show,
 	handleClose,
 	loadProfile,
@@ -36,6 +36,19 @@ const MyProfilePage = ({
 			saveProfile={saveProfile}
 		/>
 	);
+};
+
+MyProfilePage.propTypes = {
+	id: PropTypes.number,
+	profile: PropTypes.object,
+	professions: PropTypes.array.isRequired,
+	hairColors: PropTypes.array.isRequired,
+	show: PropTypes.bool.isRequired,
+	handleClose: PropTypes.func.isRequired,
+	loadProfile: PropTypes.func.isRequired,
+	loadHabitantsProfessions: PropTypes.func.isRequired,
+	loadHabitantsHairColors: PropTypes.func.isRequired,
+	saveProfile: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({

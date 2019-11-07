@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Chart } from "primereact/chart";
 
-export default ({ habitantsByProfession }) => {
+const HabitantsByProfessionChart = ({ habitantsByProfession }) => {
 	const habitantsByProfessionData = {
 		labels: habitantsByProfession.map(profession => profession.profession),
 		datasets: [
@@ -34,3 +35,9 @@ export default ({ habitantsByProfession }) => {
 		/>
 	);
 };
+
+HabitantsByProfessionChart.propTypes = {
+	habitantsByProfession: PropTypes.array.isRequired
+};
+
+export default HabitantsByProfessionChart;

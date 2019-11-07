@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import PropTypes from "prop-types";
 import {
 	operationInProgress,
 	operationDone,
@@ -10,6 +11,10 @@ const loadHabitantsProfessionsSuccess = professions => ({
 	type: types.LOAD_HAB_PROFESSIONS_SUCCESS,
 	professions
 });
+
+loadHabitantsProfessionsSuccess.propTypes = {
+	professions: PropTypes.array.isRequired
+};
 
 export const loadHabitantsProfessions = () => async dispatch => {
 	try {

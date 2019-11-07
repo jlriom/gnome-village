@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Media from "react-bootstrap/Media";
 import Image from "react-bootstrap/Image";
@@ -87,6 +88,10 @@ const HabitantItem = ({ habitant }) => {
 			</span>
 		</>
 	);
+};
+
+HabitantItem.propTypes = {
+	habitant: PropTypes.object.isRequired
 };
 
 export default HabitantItem;

@@ -1,4 +1,5 @@
 import * as types from "./actionTypes";
+import PropTypes from "prop-types";
 import { operationInProgress, operationDone } from "../actions/appActions";
 
 import * as auth from "../../api/auth";
@@ -10,6 +11,12 @@ const userLogin = (id, username, isGuest) => ({
 	username,
 	isGuest
 });
+
+userLogin.propTypes = {
+	id: PropTypes.number,
+	username: PropTypes.string.isRequired,
+	isGuest: PropTypes.bool.isRequired
+};
 
 const userLogout = () => ({
 	type: types.AUTH_LOGOUT
@@ -29,6 +36,10 @@ export const login = username => async dispatch => {
 	} finally {
 		dispatch(operationDone());
 	}
+};
+
+login.propTypes = {
+	username: PropTypes.string.isRequired
 };
 
 export const logout = () => dispatch => {

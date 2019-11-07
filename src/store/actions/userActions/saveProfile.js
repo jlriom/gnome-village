@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import PropTypes from "prop-types";
 import {
 	operationInProgress,
 	operationDone,
@@ -12,10 +13,18 @@ const saveProfileSuccess = profile => ({
 	profile
 });
 
+saveProfileSuccess.propTypes = {
+	profile: PropTypes.object.isRequired
+};
+
 const saveProfileFail = error => ({
 	type: types.SAVE_HAB_DETAILS_FAIL,
 	error
 });
+
+saveProfileFail.propTypes = {
+	error: PropTypes.object.isRequired
+};
 
 export const saveProfile = profile => async dispatch => {
 	try {
@@ -30,4 +39,8 @@ export const saveProfile = profile => async dispatch => {
 	} finally {
 		dispatch(operationDone());
 	}
+};
+
+saveProfile.propTypes = {
+	profile: PropTypes.object.isRequired
 };

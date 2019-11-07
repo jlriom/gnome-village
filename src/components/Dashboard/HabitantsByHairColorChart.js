@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Chart } from "primereact/chart";
 
-export default ({ habitantsByHairColor }) => {
+const HabitantsByHairColorChart = ({ habitantsByHairColor }) => {
 	const habitantsByHairColorDataOptions = {
 		title: {
 			display: true,
@@ -38,3 +39,9 @@ export default ({ habitantsByHairColor }) => {
 		/>
 	);
 };
+
+HabitantsByHairColorChart.propTypes = {
+	habitantsByHairColor: PropTypes.array.isRequired
+};
+
+export default HabitantsByHairColorChart;

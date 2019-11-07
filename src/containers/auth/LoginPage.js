@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { login } from "../../store/actions/authActions";
 import PageLayout from "../../components/layout/PageLayout";
@@ -64,6 +65,12 @@ const LoginPage = ({ show, handleClose, login }) => {
 			</Modal>
 		</PageLayout>
 	);
+};
+
+LoginPage.propTypes = {
+	show: PropTypes.bool.isRequired,
+	handleClose: PropTypes.func.isRequired,
+	login: PropTypes.func.isRequired
 };
 
 export default connect(

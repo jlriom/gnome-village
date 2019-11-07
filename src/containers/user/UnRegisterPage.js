@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { unRegisterme } from "../../store/actions/userActions";
 import { logout } from "../../store/actions/authActions";
@@ -47,6 +48,16 @@ const UnRegisterPage = ({
 		</Modal>
 	);
 };
+
+UnRegisterPage.propTypes = {
+	id: PropTypes.number,
+	name: PropTypes.string.isRequired,
+	unRegisterme: PropTypes.func.isRequired,
+	logout: PropTypes.func.isRequired,
+	show: PropTypes.bool.isRequired,
+	handleClose: PropTypes.func.isRequired
+};
+
 const mapStateToProps = state => ({
 	id: state.auth.id,
 	name: state.auth.username

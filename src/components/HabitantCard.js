@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
 import LazyLoad from "react-lazyload";
 
@@ -58,6 +59,10 @@ const HabitantCard = ({ habitant }) => {
 			</Card>
 		</>
 	);
+};
+
+HabitantCard.propTypes = {
+	habitant: PropTypes.object.isRequired
 };
 
 export default HabitantCard;

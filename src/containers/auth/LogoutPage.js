@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logout } from "../../store/actions/authActions";
 
@@ -30,6 +31,12 @@ const LogoutPage = ({ show, handleClose, logout }) => {
 			</Modal.Footer>
 		</Modal>
 	);
+};
+
+LogoutPage.propTypes = {
+	show: PropTypes.bool.isRequired,
+	handleClose: PropTypes.func.isRequired,
+	logout: PropTypes.func.isRequired
 };
 
 export default connect(

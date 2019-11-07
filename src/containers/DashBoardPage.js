@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import {
 	loadHabitantsByHairColor,
@@ -16,7 +17,6 @@ import HabitantsByProfession from "../components/Dashboard/HabitantsByProfession
 const DashBoardPage = ({
 	habitantsByHairColor,
 	habitantsByProfession,
-	error,
 	loadHabitantsByHairColor,
 	loadHabitantsByProfession
 }) => {
@@ -55,6 +55,13 @@ const DashBoardPage = ({
 			</div>
 		</PageLayout>
 	);
+};
+
+DashBoardPage.propTypes = {
+	habitantsByHairColor: PropTypes.array.isRequired,
+	habitantsByProfession: PropTypes.array.isRequired,
+	loadHabitantsByHairColor: PropTypes.func.isRequired,
+	loadHabitantsByProfession: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({

@@ -1,4 +1,5 @@
 import * as types from "./actionTypes";
+import PropTypes from "prop-types";
 
 export const operationInProgress = () => ({
 	type: types.APP_OPERATION_IN_PROGRESS
@@ -17,6 +18,11 @@ export const showMessage = (summary, message) => ({
 	}
 });
 
+showMessage.propTypes = {
+	summary: PropTypes.string,
+	message: PropTypes.object
+};
+
 export const showError = (summary, message) => ({
 	type: types.APP_SHOW_ERROR,
 	message: {
@@ -25,3 +31,8 @@ export const showError = (summary, message) => ({
 		detail: message
 	}
 });
+
+showError.propTypes = {
+	summary: PropTypes.string,
+	message: PropTypes.object
+};

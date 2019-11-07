@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import PropTypes from "prop-types";
 import {
 	operationInProgress,
 	operationDone,
@@ -15,10 +16,18 @@ const loadProfileSuccess = profile => ({
 	profile
 });
 
+loadProfileSuccess.propTypes = {
+	profile: PropTypes.object.isRequired
+};
+
 const loadProfileFail = error => ({
 	type: types.LOAD_HAB_DETAILS_FAIL,
 	error
 });
+
+loadProfileFail.propTypes = {
+	profile: PropTypes.object.isRequired
+};
 
 export const loadProfile = id => async dispatch => {
 	try {

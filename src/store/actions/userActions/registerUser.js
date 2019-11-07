@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import PropTypes from "prop-types";
 import {
 	operationInProgress,
 	operationDone,
@@ -13,15 +14,27 @@ const registerUserExistsYetFail = error => ({
 	error
 });
 
+registerUserExistsYetFail.propTypes = {
+	error: PropTypes.object.isRequired
+};
+
 const registerUserFail = error => ({
 	type: types.REGISTERME_AS_HAB_FAIL,
 	error
 });
 
+registerUserFail.propTypes = {
+	error: PropTypes.object.isRequired
+};
+
 const registerUserSuccess = id => ({
 	type: types.REGISTERME_AS_HAB_SUCCESS,
 	id
 });
+
+registerUserSuccess.propTypes = {
+	error: PropTypes.object.isRequired
+};
 
 export const registerUser = ({
 	name,
@@ -65,4 +78,14 @@ export const registerUser = ({
 	} finally {
 		dispatch(operationDone());
 	}
+};
+
+registerUser.propTypes = {
+	name: PropTypes.string.isRequired,
+	thumbnail: PropTypes.string.isRequired,
+	age: PropTypes.number.isRequired,
+	weight: PropTypes.number.isRequired,
+	height: PropTypes.number.isRequired,
+	hair_color: PropTypes.string.isRequired,
+	professions: PropTypes.array.isRequired
 };

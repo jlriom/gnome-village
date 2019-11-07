@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { searchHabitants } from "../../store/actions/searchActions";
 import PageLayout from "../../components/layout/PageLayout";
@@ -16,7 +17,6 @@ const SearchPage = ({
 	searchCriteria,
 	habitantList,
 	total,
-	error,
 	searchHabitants
 }) => {
 	const [searchByName, setSearchByName] = useState("");
@@ -133,11 +133,17 @@ const SearchPage = ({
 	);
 };
 
+SearchPage.propTypes = {
+	searchCriteria: PropTypes.object.isRequired,
+	habitantList: PropTypes.array.isRequired,
+	total: PropTypes.number,
+	searchHabitants: PropTypes.func.isRequired
+};
+
 const mapStateToProps = state => ({
 	searchCriteria: state.search.searchCriteria,
 	habitantList: state.search.list,
-	total: state.search.total,
-	error: state.search.error
+	total: state.search.total
 });
 
 export default connect(

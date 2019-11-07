@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 const CategoryItem = ({ category, count }) => (
 	<li className='list-group-item '>
 		<span
@@ -12,5 +12,10 @@ const CategoryItem = ({ category, count }) => (
 		</span>
 	</li>
 );
+
+CategoryItem.propTypes = {
+	category: PropTypes.string.isRequired,
+	count: PropTypes.number.isRequired
+};
 
 export default CategoryItem;

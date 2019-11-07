@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import CategoryItem from "./CategoryItem";
 
 const HabitantsByProfession = ({ habitantsByProfession }) => (
@@ -15,5 +15,9 @@ const HabitantsByProfession = ({ habitantsByProfession }) => (
 		))}
 	</ul>
 );
+
+HabitantsByProfession.propTypes = {
+	habitantsByProfession: PropTypes.array.isRequired
+};
 
 export default HabitantsByProfession;

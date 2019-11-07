@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import PropTypes from "prop-types";
 import {
 	operationInProgress,
 	operationDone,
@@ -14,6 +15,9 @@ const addFriendFail = error => ({
 	type: types.ADD_FRIEND_FAIL,
 	error
 });
+addFriendFail.propTypes = {
+	error: PropTypes.object
+};
 
 export const addFriend = (id, friend) => async dispatch => {
 	try {

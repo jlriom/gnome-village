@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -246,6 +247,21 @@ const HabitantDetailsEdit = ({
 			</Modal>
 		</>
 	);
+};
+
+HabitantDetailsEdit.propTypes = {
+	id: PropTypes.number,
+	mode: PropTypes.object.isRequired,
+	profile: PropTypes.object,
+	professions: PropTypes.array.isRequired,
+	hairColors: PropTypes.array.isRequired,
+	show: PropTypes.bool.isRequired,
+	handleClose: PropTypes.func.isRequired,
+	loadHabitantsProfessions: PropTypes.func.isRequired,
+	loadHabitantsHairColors: PropTypes.func.isRequired,
+	loadProfile: PropTypes.func.isRequired,
+	registerUser: PropTypes.func,
+	saveProfile: PropTypes.func
 };
 
 export default HabitantDetailsEdit;

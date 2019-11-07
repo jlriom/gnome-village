@@ -1,4 +1,5 @@
 import * as types from "./actionTypes";
+import PropTypes from "prop-types";
 import * as readApi from "../../api/brastlewark-read-api";
 import {
 	operationInProgress,
@@ -19,6 +20,10 @@ const searchHabitantsFail = error => ({
 	error
 });
 
+searchHabitantsFail.propTypes = {
+	type: PropTypes.object.isRequired
+};
+
 export const searchHabitants = (
 	searchCriteria = defaultSearchCriteria
 ) => async dispatch => {
@@ -33,4 +38,8 @@ export const searchHabitants = (
 	} finally {
 		dispatch(operationDone());
 	}
+};
+
+searchHabitants.propTypes = {
+	searchCriteria: PropTypes.object.isRequired
 };

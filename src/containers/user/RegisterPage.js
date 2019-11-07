@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import {
 	registerUser,
@@ -12,7 +13,6 @@ const RegisterPage = ({
 	profile,
 	professions,
 	hairColors,
-	error,
 	show,
 	handleClose,
 	loadProfile,
@@ -34,6 +34,18 @@ const RegisterPage = ({
 			registerUser={registerUser}
 		/>
 	);
+};
+
+RegisterPage.propTypes = {
+	profile: PropTypes.object,
+	professions: PropTypes.array.isRequired,
+	hairColors: PropTypes.array.isRequired,
+	show: PropTypes.bool.isRequired,
+	handleClose: PropTypes.func.isRequired,
+	loadProfile: PropTypes.func.isRequired,
+	loadHabitantsProfessions: PropTypes.func.isRequired,
+	loadHabitantsHairColors: PropTypes.func.isRequired,
+	registerUser: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({

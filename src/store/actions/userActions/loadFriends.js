@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import PropTypes from "prop-types";
 import {
 	operationInProgress,
 	operationDone,
@@ -14,10 +15,18 @@ const loadFriendsSuccess = friends => ({
 	friends
 });
 
+loadFriendsSuccess.propTypes = {
+	friends: PropTypes.array.isRequired
+};
+
 const loadFriendsFail = error => ({
 	type: types.LOAD_FRIENDS_FAIL,
 	error
 });
+
+loadFriendsFail.propTypes = {
+	error: PropTypes.object.isRequired
+};
 
 export const loadFriends = id => async dispatch => {
 	try {
