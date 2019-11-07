@@ -103,13 +103,13 @@ const HabitantDetailsEdit = ({
 		if (thumbnail.trim() === "") {
 			errorList.push("Photo is required");
 		}
-		if (age === "0") {
+		if (age <= 0) {
 			errorList.push("Age has to be > 0");
 		}
-		if (weight === "0") {
+		if (weight <= 0) {
 			errorList.push("Weight has to be > 0");
 		}
-		if (height === "0") {
+		if (height <= 0) {
 			errorList.push("Height has to be > 0");
 		}
 

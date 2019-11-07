@@ -5,7 +5,12 @@ const createGnome = async gnome => {
 };
 
 const updateGnome = async gnome => {
-	return await brastlewarkHttp.updateGnome(gnome);
+	const currentGnome = await brastlewarkHttp.getGnomeById(gnome.id);
+
+	return await brastlewarkHttp.updateGnome({
+		...gnome,
+		friends: currentGnome.friends
+	});
 };
 
 const deleteGnome = async id => {

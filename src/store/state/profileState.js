@@ -1,9 +1,9 @@
 export const defaultProfile = {
 	name: "",
 	thumbnail: "",
-	age: null,
-	weight: null,
-	height: null,
+	age: 0,
+	weight: 0,
+	height: 0,
 	hair_color: "Black",
 	professions: []
 };
