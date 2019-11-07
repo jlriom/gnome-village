@@ -4,6 +4,8 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Select from "react-select";
+import Image from "react-bootstrap/Image";
+import LazyLoad from "react-lazyload";
 import { defaultProfile } from "../store/state/profileState";
 
 const HabitantDetailsEdit = ({
@@ -121,6 +123,10 @@ const HabitantDetailsEdit = ({
 		return true;
 	};
 
+	const handleImageChange = e => {
+		console.log("handleImageChange", e);
+	};
+
 	return (
 		<>
 			<Modal show={show} onHide={handleClose} size='lg'>
@@ -159,6 +165,15 @@ const HabitantDetailsEdit = ({
 											required={true}
 										/>
 									</Form.Group>
+
+									<Image
+										className='d-inline-block mx-4 image-dimensions'
+										src={values.thumbnail}
+										alt={values.name}
+										rounded
+										style={{ height: "10rem", width: "10rem" }}
+										onChange={handleImageChange}
+									/>
 								</div>
 							</div>
 							<div className='row'>

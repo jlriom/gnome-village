@@ -49,7 +49,7 @@ const userReducer = (state = initialState.user, action) => {
 		case types.SAVE_HAB_DETAILS_SUCCESS:
 			return {
 				...state,
-				profile: initialState.defaultProfile,
+				profile: state.profile,
 				error: noError
 			};
 
