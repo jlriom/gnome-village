@@ -1,5 +1,6 @@
 import * as types from "./actionTypes";
 import * as readApi from "../../api/brastlewark-read-api";
+import { operationInProgress, operationDone } from "../actions/appActions";
 
 const loadHabitantsByHairColorSuccess = habitantsByHairColor => ({
 	type: types.STATS_HAB_BY_HAIRCOLOR_SUCCESS,
@@ -13,11 +14,14 @@ const loadHabitantsByHairColorFail = error => ({
 
 export const loadHabitantsByHairColor = () => async dispatch => {
 	try {
+		dispatch(operationInProgress());
+
 		const result = await readApi.getHairColors();
 		dispatch(loadHabitantsByHairColorSuccess(result));
 	} catch (error) {
 		dispatch(loadHabitantsByHairColorFail(error));
 	} finally {
+		dispatch(operationDone());
 	}
 };
 
@@ -33,10 +37,13 @@ const loadHabitantsByProfessionFail = error => ({
 
 export const loadHabitantsByProfession = () => async dispatch => {
 	try {
+		dispatch(operationInProgress());
+
 		const result = await readApi.getProfessions();
 		dispatch(loadHabitantsByProfessionSuccess(result));
 	} catch (error) {
 		dispatch(loadHabitantsByProfessionFail(error));
 	} finally {
+		dispatch(operationDone());
 	}
 };

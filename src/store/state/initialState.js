@@ -1,8 +1,10 @@
+import { defaultAppState } from "./appState";
 import { noError } from "./errorState";
 import { defaultSearchCriteria } from "./searchState";
 import { defaultProfile } from "./profileState";
 
 export default {
+	app: defaultAppState,
 	auth: {
 		username: "",
 		id: null,

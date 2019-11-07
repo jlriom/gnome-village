@@ -1,6 +1,6 @@
 import * as types from "./actionTypes";
 import * as auth from "../../api/auth";
-
+import { operationInProgress, operationDone } from "../actions/appActions";
 import history from "../../shared/history";
 
 const userLogin = (id, username, isGuest) => ({
@@ -16,6 +16,8 @@ const userLogout = () => ({
 
 export const login = username => async dispatch => {
 	try {
+		dispatch(operationInProgress());
+
 		const userResponse = await auth.login(username);
 		dispatch(
 			userLogin(userResponse.id, userResponse.username, userResponse.isGuest)
@@ -24,6 +26,7 @@ export const login = username => async dispatch => {
 	} catch (error) {
 		alert(error);
 	} finally {
+		dispatch(operationDone());
 	}
 };
 

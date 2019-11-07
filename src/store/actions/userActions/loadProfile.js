@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import { operationInProgress, operationDone } from "../../actions/appActions";
 import {
 	getGnomeById,
 	getGnomeByName
@@ -17,6 +18,8 @@ const loadProfileFail = error => ({
 
 export const loadProfile = id => async dispatch => {
 	try {
+		dispatch(operationInProgress());
+
 		if (id === null) {
 			dispatch(loadProfileSuccess(defaultProfile));
 		} else if (!isNaN(id)) {
@@ -30,5 +33,6 @@ export const loadProfile = id => async dispatch => {
 	} catch (error) {
 		dispatch(loadProfileFail(error));
 	} finally {
+		dispatch(operationDone());
 	}
 };

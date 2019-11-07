@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import { operationInProgress, operationDone } from "../../actions/appActions";
 import {
 	getGnomeById,
 	getGnomeByName
@@ -16,6 +17,8 @@ const loadFriendsFail = error => ({
 
 export const loadFriends = id => async dispatch => {
 	try {
+		dispatch(operationInProgress());
+
 		let profile;
 		if (!isNaN(id)) {
 			profile = await getGnomeById(id);
@@ -34,5 +37,6 @@ export const loadFriends = id => async dispatch => {
 	} catch (error) {
 		dispatch(loadFriendsFail(error));
 	} finally {
+		dispatch(operationDone());
 	}
 };

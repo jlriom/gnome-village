@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import { operationInProgress, operationDone } from "../../actions/appActions";
 import { deleteGnome } from "../../../api/brastlewark-write-api";
 
 const unRegistermeSuccess = () => ({
@@ -12,10 +13,13 @@ const unRegistermeFail = error => ({
 
 export const unRegisterme = id => async dispatch => {
 	try {
+		dispatch(operationInProgress());
+
 		await deleteGnome(id);
 		dispatch(unRegistermeSuccess());
 	} catch (error) {
 		dispatch(unRegistermeFail(error));
 	} finally {
+		dispatch(operationDone());
 	}
 };

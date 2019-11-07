@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import {
 	loadHabitantsByHairColor,
@@ -20,35 +20,60 @@ const DashBoardPage = ({
 	loadHabitantsByHairColor,
 	loadHabitantsByProfession
 }) => {
-	useEffect(() => {
-		loadHabitantsByHairColor();
-		loadHabitantsByProfession();
-	}, [loadHabitantsByHairColor, loadHabitantsByProfession]);
+	const [loadedHabitantsByHairColor, setLoadedHabitantsByHairColor] = useState(
+		null
+	);
+	const [loadedHabitantsByProfession, setHabitantsByProfession] = useState(
+		null
+	);
 
+	const [loadingByHairColor, setLoadingByHairColor] = useState(true);
+	const [loadingByProfession, setLoadingByProfession] = useState(true);
+	useEffect(() => {
+		if (loadingByHairColor) {
+			loadHabitantsByHairColor();
+			setLoadedHabitantsByHairColor(habitantsByHairColor);
+			setLoadingByHairColor(false);
+		}
+	}, [loadingByHairColor]);
+
+	useEffect(() => {
+		if (loadingByProfession) {
+			loadHabitantsByProfession();
+			setHabitantsByProfession(habitantsByProfession);
+			setLoadingByProfession(false);
+		}
+	}, [loadingByProfession]);
+
+	const infoLoaded = loadedHabitantsByHairColor && loadedHabitantsByProfession;
 	return (
 		<PageLayout headerText='Dashboard'>
 			<div className='container'>
-				<div className='row'>
-					<div className='col-3'>
-						<TotalSection habitantsByHairColor={habitantsByHairColor} />
-						<HabitantsByHairColor habitantsByHairColor={habitantsByHairColor} />
-						<HabitantsByProfession
-							habitantsByProfession={habitantsByProfession}
-						/>
-					</div>
-					<div className='col-9'>
-						<div className='m-4'>
-							<HabitantsByHairColorChart
-								habitantsByHairColor={habitantsByHairColor}
+				{infoLoaded && (
+					<div className='row'>
+						<div className='col-3'>
+							<TotalSection habitantsByHairColor={loadedHabitantsByHairColor} />
+							<HabitantsByHairColor
+								habitantsByHairColor={loadedHabitantsByHairColor}
+							/>
+							<HabitantsByProfession
+								habitantsByProfession={loadedHabitantsByProfession}
 							/>
 						</div>
-						<div className='m-4'>
-							<HabitantsByProfessionChart
-								habitantsByProfession={habitantsByProfession}
-							/>
+						<div className='col-9'>
+							<div className='m-4'>
+								<HabitantsByHairColorChart
+									habitantsByHairColor={loadedHabitantsByHairColor}
+								/>
+							</div>
+							<div className='m-4'>
+								<HabitantsByProfessionChart
+									habitantsByProfession={loadedHabitantsByProfession}
+								/>
+							</div>
 						</div>
 					</div>
-				</div>
+				)}
 			</div>
 		</PageLayout>
 	);

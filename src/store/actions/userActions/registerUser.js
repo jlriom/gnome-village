@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import { operationInProgress, operationDone } from "../../actions/appActions";
 import { getGnomeByName } from "../../../api/brastlewark-read-api";
 import { createGnome } from "../../../api/brastlewark-write-api";
 
@@ -17,7 +18,6 @@ const registerUserSuccess = id => ({
 	id
 });
 
-// TODO replace by user struct
 export const registerUser = ({
 	name,
 	thumbnail,
@@ -28,6 +28,8 @@ export const registerUser = ({
 	professions
 }) => async dispatch => {
 	try {
+		dispatch(operationInProgress());
+
 		const user = await getGnomeByName(name);
 		if (user !== null) {
 			dispatch(
@@ -49,5 +51,6 @@ export const registerUser = ({
 	} catch (error) {
 		dispatch(registerUserFail(error));
 	} finally {
+		dispatch(operationDone());
 	}
 };

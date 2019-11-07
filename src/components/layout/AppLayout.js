@@ -3,6 +3,7 @@ import { Router, Route, Switch } from "react-router-dom";
 import history from "../../shared/history";
 import AppHeader from "./AppHeader";
 import AppFooter from "./AppFooter";
+import "./AppLayout.css";
 
 import {
 	HomePage,
@@ -38,17 +39,20 @@ const AuthenticatedRouting = () => {
 	);
 };
 
-const AppLayout = ({ auth }) => (
-	<div>
-		<Router history={history}>
-			<AppHeader auth={auth} />
-			<div className='container my-4'>
-				{auth.isLoggedIn && <AuthenticatedRouting />}
-				{!auth.isLoggedIn && <AnonymousRouting />}
-			</div>
-			<AppFooter />
-		</Router>
-	</div>
-);
+const AppLayout = ({ auth, loading, message }) => {
+	return (
+		<div>
+			<Router history={history}>
+				<AppHeader auth={auth} />
+				{loading && <div className='spinner'></div>}
+				<div className='container my-4'>
+					{auth.isLoggedIn && <AuthenticatedRouting />}
+					{!auth.isLoggedIn && <AnonymousRouting />}
+				</div>
+				<AppFooter />
+			</Router>
+		</div>
+	);
+};
 
 export default AppLayout;
