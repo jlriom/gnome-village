@@ -1,5 +1,9 @@
 import * as types from "../actionTypes";
-import { operationInProgress, operationDone } from "../../actions/appActions";
+import {
+	operationInProgress,
+	operationDone,
+	showError
+} from "../../actions/appActions";
 import { getHairColors } from "../../../api/brastlewark-read-api";
 
 const loadHabitantsHairColorsSuccess = hairColors => ({
@@ -15,7 +19,7 @@ export const loadHabitantsHairColors = () => async dispatch => {
 		const hairColors = result.map(hairColor => hairColor.hair_color);
 		dispatch(loadHabitantsHairColorsSuccess(hairColors));
 	} catch (error) {
-		alert(error);
+		dispatch(showError("Loading habitants' hair colors", error));
 	} finally {
 		dispatch(operationDone());
 	}

@@ -1,6 +1,10 @@
 import * as types from "./actionTypes";
 import * as readApi from "../../api/brastlewark-read-api";
-import { operationInProgress, operationDone } from "../actions/appActions";
+import {
+	operationInProgress,
+	operationDone,
+	showError
+} from "../actions/appActions";
 import { defaultSearchCriteria } from "../state/searchState";
 
 const searchHabitantsSuccess = (list, total, searchCriteria) => ({
@@ -25,6 +29,7 @@ export const searchHabitants = (
 		dispatch(searchHabitantsSuccess(result.list, result.total, searchCriteria));
 	} catch (error) {
 		dispatch(searchHabitantsFail(error));
+		dispatch(showError("Search", error));
 	} finally {
 		dispatch(operationDone());
 	}

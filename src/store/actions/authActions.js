@@ -1,6 +1,7 @@
 import * as types from "./actionTypes";
-import * as auth from "../../api/auth";
 import { operationInProgress, operationDone } from "../actions/appActions";
+
+import * as auth from "../../api/auth";
 import history from "../../shared/history";
 
 const userLogin = (id, username, isGuest) => ({

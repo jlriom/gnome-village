@@ -1,5 +1,9 @@
 import * as types from "../actionTypes";
-import { operationInProgress, operationDone } from "../../actions/appActions";
+import {
+	operationInProgress,
+	operationDone,
+	showError
+} from "../../actions/appActions";
 import {
 	getGnomeById,
 	getGnomeByName
@@ -36,6 +40,7 @@ export const loadFriends = id => async dispatch => {
 		dispatch(loadFriendsSuccess(friends));
 	} catch (error) {
 		dispatch(loadFriendsFail(error));
+		dispatch(showError("Loading friends", error));
 	} finally {
 		dispatch(operationDone());
 	}

@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Router, Route, Switch } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import history from "../../shared/history";
 import AppHeader from "./AppHeader";
 import AppFooter from "./AppFooter";
@@ -40,6 +42,16 @@ const AuthenticatedRouting = () => {
 };
 
 const AppLayout = ({ auth, loading, message }) => {
+	useEffect(() => {
+		if (message) {
+			if (message.severity === "error") {
+				toast.error(`${message.summary}: ${message.detail}`);
+			} else {
+				toast.success(`${message.summary}: ${message.detail}`);
+			}
+		}
+	}, [message]);
+
 	return (
 		<div>
 			<Router history={history}>
@@ -49,6 +61,7 @@ const AppLayout = ({ auth, loading, message }) => {
 					{auth.isLoggedIn && <AuthenticatedRouting />}
 					{!auth.isLoggedIn && <AnonymousRouting />}
 				</div>
+				<ToastContainer autoClose={3000} hideProgressBar />
 				<AppFooter />
 			</Router>
 		</div>

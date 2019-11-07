@@ -20,6 +20,12 @@ const appReducer = (state = initialState.app, action) => {
 					numOperationsInProgress < 0 ? 0 : numOperationsInProgress,
 				loading: numOperationsInProgress !== 0
 			};
+		case types.APP_SHOW_MESSAGE:
+		case types.APP_SHOW_ERROR:
+			return {
+				...state,
+				message: action.message
+			};
 		default:
 			return state;
 	}

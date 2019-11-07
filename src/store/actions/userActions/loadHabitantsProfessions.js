@@ -1,5 +1,9 @@
 import * as types from "../actionTypes";
-import { operationInProgress, operationDone } from "../../actions/appActions";
+import {
+	operationInProgress,
+	operationDone,
+	showError
+} from "../../actions/appActions";
 import { getProfessions } from "../../../api/brastlewark-read-api";
 
 const loadHabitantsProfessionsSuccess = professions => ({
@@ -15,7 +19,7 @@ export const loadHabitantsProfessions = () => async dispatch => {
 		const professions = result.map(profession => profession.profession);
 		dispatch(loadHabitantsProfessionsSuccess(professions));
 	} catch (error) {
-		alert(error);
+		dispatch(showError("Loading habitants' professions", error));
 	} finally {
 		dispatch(operationDone());
 	}

@@ -1,5 +1,9 @@
 import * as types from "../actionTypes";
-import { operationInProgress, operationDone } from "../../actions/appActions";
+import {
+	operationInProgress,
+	operationDone,
+	showError
+} from "../../actions/appActions";
 import { deleteGnome } from "../../../api/brastlewark-write-api";
 
 const unRegistermeSuccess = () => ({
@@ -19,6 +23,7 @@ export const unRegisterme = id => async dispatch => {
 		dispatch(unRegistermeSuccess());
 	} catch (error) {
 		dispatch(unRegistermeFail(error));
+		dispatch(showError("Removing my profile", error));
 	} finally {
 		dispatch(operationDone());
 	}

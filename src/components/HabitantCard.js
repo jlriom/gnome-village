@@ -20,7 +20,6 @@ const HabitantCard = ({ habitant }) => {
 		professions
 	} = habitant;
 
-	if (!habitant) return <></>;
 	return (
 		<>
 			<Card style={{ width: "18rem" }}>

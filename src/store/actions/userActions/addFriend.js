@@ -1,5 +1,9 @@
 import * as types from "../actionTypes";
-import { operationInProgress, operationDone } from "../../actions/appActions";
+import {
+	operationInProgress,
+	operationDone,
+	showError
+} from "../../actions/appActions";
 import { addFriendToGnome } from "../../../api/brastlewark-write-api";
 
 const addFriendSuccess = () => ({
@@ -18,6 +22,7 @@ export const addFriend = (id, friend) => async dispatch => {
 		dispatch(addFriendSuccess());
 	} catch (error) {
 		dispatch(addFriendFail(error));
+		dispatch(showError("Adding a friend", error));
 	} finally {
 		dispatch(operationDone());
 	}

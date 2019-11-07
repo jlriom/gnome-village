@@ -1,5 +1,9 @@
 import * as types from "../actionTypes";
-import { operationInProgress, operationDone } from "../../actions/appActions";
+import {
+	operationInProgress,
+	operationDone,
+	showError
+} from "../../actions/appActions";
 import { removeFriendFromGnome } from "../../../api/brastlewark-write-api";
 
 const removeFriendSuccess = () => ({
@@ -19,6 +23,7 @@ export const removeFriend = (id, friend) => async dispatch => {
 		dispatch(removeFriendSuccess());
 	} catch (error) {
 		dispatch(removeFriendFail(error));
+		dispatch(showError("Removing a friend", error));
 	} finally {
 		dispatch(operationDone());
 	}

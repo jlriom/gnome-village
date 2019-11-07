@@ -1,5 +1,10 @@
 import * as types from "../actionTypes";
-import { operationInProgress, operationDone } from "../../actions/appActions";
+import {
+	operationInProgress,
+	operationDone,
+	showError,
+	showMessage
+} from "../../actions/appActions";
 import { updateGnome } from "../../../api/brastlewark-write-api";
 
 const saveProfileSuccess = profile => ({
@@ -15,11 +20,13 @@ const saveProfileFail = error => ({
 export const saveProfile = profile => async dispatch => {
 	try {
 		dispatch(operationInProgress());
-
 		const myprofile = await updateGnome({ ...profile });
+		console.log(profile);
 		dispatch(saveProfileSuccess(myprofile));
+		dispatch(showMessage("", "Your user profile has been updated"));
 	} catch (error) {
 		dispatch(saveProfileFail(error));
+		dispatch(showError("Saving my profile", error));
 	} finally {
 		dispatch(operationDone());
 	}
