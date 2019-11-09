@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Media from "react-bootstrap/Media";
 import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button";
 import LazyLoad from "react-lazyload";
 import "./HabitantItem.css";
 
-const HabitantItem = ({ habitant }) => {
+const HabitantItem = ({
+	habitant,
+	manageFriends,
+	myId,
+	myfriends,
+	addFriend,
+	removeFriend,
+	addRemoveFriend
+}) => {
 	const {
 		id,
 		name,
@@ -19,9 +28,31 @@ const HabitantItem = ({ habitant }) => {
 		friends
 	} = habitant;
 
+	const [isFriend, setIsFriend] = useState(
+		manageFriends && myfriends.map(f => f.name).includes(name)
+	);
+
+	const AddRemoveButton = () => (
+		<Button
+			variant='outline-info'
+			size='sm'
+			onClick={() => {
+				if (isFriend) {
+					removeFriend(myId, name);
+					setIsFriend(false);
+				} else {
+					addFriend(myId, name);
+					setIsFriend(true);
+				}
+				addRemoveFriend();
+			}}>
+			{isFriend ? "Remove from my friend list" : "Add to my friend List"}
+		</Button>
+	);
+
 	return (
 		<>
-			<span className='d-inline-block m-4' key={id}>
+			<span className='d-inline-block m-4 full-width' key={id}>
 				<Media className='full-width'>
 					<LazyLoad once>
 						<Image
@@ -33,7 +64,10 @@ const HabitantItem = ({ habitant }) => {
 						/>
 					</LazyLoad>
 					<Media.Body className='full-width'>
-						<h5>{name}</h5>
+						<h5 className='d-flex justify-content-between'>
+							<span>{name}</span>
+							{manageFriends ? <AddRemoveButton /> : <> </>}
+						</h5>
 						<hr />
 						<div className='container'>
 							<small>
@@ -62,7 +96,7 @@ const HabitantItem = ({ habitant }) => {
 												))}
 											</div>
 										) : (
-											<span className='row full-width'></span>
+											<div className='row full-width'> &nbsp;</div>
 										)}
 									</div>
 									<div className='col-lg-4'>
@@ -77,7 +111,7 @@ const HabitantItem = ({ habitant }) => {
 												))}
 											</div>
 										) : (
-											<span className='row full-width'></span>
+											<div className='row full-width'> &nbsp;</div>
 										)}
 									</div>
 								</div>
@@ -91,7 +125,13 @@ const HabitantItem = ({ habitant }) => {
 };
 
 HabitantItem.propTypes = {
-	habitant: PropTypes.object.isRequired
+	habitant: PropTypes.object.isRequired,
+	manageFriends: PropTypes.bool.isRequired,
+	myId: PropTypes.number,
+	myfriends: PropTypes.array,
+	addFriend: PropTypes.func,
+	removeFriend: PropTypes.func,
+	addRemoveFriend: PropTypes.func
 };
 
 export default HabitantItem;

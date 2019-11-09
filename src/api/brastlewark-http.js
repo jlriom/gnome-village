@@ -35,7 +35,8 @@ const getGnomesByName = async name => {
 
 const createGnome = async gnome => {
 	const response = await instance.post(`${BASE_API}`, {
-		...gnome
+		...gnome,
+		friends: []
 	});
 	return response.data;
 };

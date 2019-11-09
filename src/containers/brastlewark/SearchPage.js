@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { searchHabitants } from "../../store/actions/searchActions";
+import {
+	loadFriends,
+	addFriend,
+	removeFriend
+} from "../../store/actions/userActions";
 import PageLayout from "../../components/layout/PageLayout";
 import HabitantItem from "../../components/HabitantItem";
 
@@ -14,12 +19,19 @@ import {
 } from "react-bootstrap";
 
 const SearchPage = ({
+	id,
+	isGuest,
 	searchCriteria,
 	habitantList,
 	total,
-	searchHabitants
+	friends,
+	searchHabitants,
+	loadFriends,
+	addFriend,
+	removeFriend
 }) => {
 	const [searchByName, setSearchByName] = useState("");
+	const [reloadFriends, setReloadFriends] = useState(true);
 	useEffect(() => {
 		const search = {
 			...searchCriteria,
@@ -29,6 +41,13 @@ const SearchPage = ({
 		searchHabitants(search);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+
+	useEffect(() => {
+		if (reloadFriends && !isGuest) {
+			loadFriends(id);
+			setReloadFriends(false);
+		}
+	}, [reloadFriends, setReloadFriends, loadFriends, id, isGuest]);
 
 	const handleChange = e => {
 		setSearchByName(e.target.value);
@@ -40,7 +59,6 @@ const SearchPage = ({
 		if (form.checkValidity() === false) {
 			event.stopPropagation();
 		} else {
-			console.log("searchCriteria", searchCriteria);
 			const search = {
 				...searchCriteria,
 				name: searchByName
@@ -64,6 +82,7 @@ const SearchPage = ({
 		};
 		searchHabitants(search);
 	};
+
 	return (
 		<PageLayout>
 			<div className='container'>
@@ -125,7 +144,17 @@ const SearchPage = ({
 			{habitantList && (
 				<ul>
 					{habitantList.map(habitant => (
-						<HabitantItem key={habitant.id} habitant={habitant}></HabitantItem>
+						<HabitantItem
+							key={habitant.id}
+							habitant={habitant}
+							manageFriends={!isGuest}
+							myId={id}
+							myfriends={friends}
+							addFriend={addFriend}
+							removeFriend={removeFriend}
+							addRemoveFriend={() => {
+								setReloadFriends(true);
+							}}></HabitantItem>
 					))}
 				</ul>
 			)}
@@ -137,16 +166,25 @@ SearchPage.propTypes = {
 	searchCriteria: PropTypes.object.isRequired,
 	habitantList: PropTypes.array.isRequired,
 	total: PropTypes.number,
-	searchHabitants: PropTypes.func.isRequired
+	id: PropTypes.number,
+	isGuest: PropTypes.bool,
+	friends: PropTypes.array.isRequired,
+	searchHabitants: PropTypes.func.isRequired,
+	loadFriends: PropTypes.func.isRequired,
+	addFriend: PropTypes.func.isRequired,
+	removeFriend: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
+	id: state.auth.id,
+	isGuest: state.auth.isGuest,
 	searchCriteria: state.search.searchCriteria,
 	habitantList: state.search.list,
-	total: state.search.total
+	total: state.search.total,
+	friends: state.user.friends
 });
 
 export default connect(
 	mapStateToProps,
-	{ searchHabitants }
+	{ searchHabitants, loadFriends, addFriend, removeFriend }
 )(SearchPage);

@@ -4,8 +4,6 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Select from "react-select";
-import Image from "react-bootstrap/Image";
-import LazyLoad from "react-lazyload";
 import { defaultProfile } from "../store/state/profileState";
 
 const HabitantDetailsEdit = ({
@@ -61,13 +59,18 @@ const HabitantDetailsEdit = ({
 		setValues({ ...values, hairColor: value.value });
 	};
 
-	const handleOnSubmit = event => {
+	const closeDialog = () => {
+		setValues(defaultProfile);
+		handleClose();
+	};
+
+	const handleOnSubmit = async event => {
 		const form = event.currentTarget;
 		event.preventDefault();
 		if (form.checkValidity() === false) {
 			event.stopPropagation();
 		} else {
-			if (!validate(values)) {
+			if (!(await validate(values))) {
 				event.stopPropagation();
 				return;
 			}
@@ -97,7 +100,7 @@ const HabitantDetailsEdit = ({
 		}
 	};
 
-	const validate = ({ name, thumbnail, age, weight, height }) => {
+	const validate = async ({ name, thumbnail, age, weight, height }) => {
 		let errorList = [];
 
 		if (name.trim() === "") {
@@ -116,6 +119,11 @@ const HabitantDetailsEdit = ({
 			errorList.push("Height has to be > 0");
 		}
 
+		try {
+			await checkImage(thumbnail);
+		} catch (err) {
+			errorList.push("Image not not found on internet!");
+		}
 		if (errorList.length > 0) {
 			alert(errorList.join("\n"));
 			return false;
@@ -123,13 +131,17 @@ const HabitantDetailsEdit = ({
 		return true;
 	};
 
-	const handleImageChange = e => {
-		console.log("handleImageChange", e);
-	};
+	const checkImage = path =>
+		new Promise((resolve, reject) => {
+			const img = new Image();
+			img.onload = () => resolve({ path, status: "ok" });
+			img.onerror = () => reject({ path, status: "error" });
+			img.src = path;
+		});
 
 	return (
 		<>
-			<Modal show={show} onHide={handleClose} size='lg'>
+			<Modal show={show} onHide={closeDialog} size='lg'>
 				<Modal.Header closeButton>
 					<Modal.Title> {mode.title}</Modal.Title>
 				</Modal.Header>
@@ -165,15 +177,6 @@ const HabitantDetailsEdit = ({
 											required={true}
 										/>
 									</Form.Group>
-
-									<Image
-										className='d-inline-block mx-4 image-dimensions'
-										src={values.thumbnail}
-										alt={values.name}
-										rounded
-										style={{ height: "10rem", width: "10rem" }}
-										onChange={handleImageChange}
-									/>
 								</div>
 							</div>
 							<div className='row'>
@@ -251,7 +254,7 @@ const HabitantDetailsEdit = ({
 					</Modal.Body>
 
 					<Modal.Footer>
-						<Button variant='secondary' onClick={handleClose}>
+						<Button variant='secondary' onClick={closeDialog}>
 							Cancel
 						</Button>
 						<Button variant='primary' type='submit'>

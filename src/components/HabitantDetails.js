@@ -14,9 +14,16 @@ const HabitantDetails = ({ profile, friends }) => {
 					</div>
 					<div className='col-9'>
 						<h3 className='m-4'>Friends</h3>
-						{friends.map(friend => {
-							return <HabitantItem key={friend.id} habitant={friend} />;
-						})}
+						{friends &&
+							friends.map(friend => {
+								return (
+									<HabitantItem
+										key={friend.id}
+										habitant={friend}
+										manageFriends={false}
+									/>
+								);
+							})}
 						<br></br>
 					</div>
 				</div>
