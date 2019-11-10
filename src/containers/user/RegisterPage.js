@@ -7,6 +7,8 @@ import {
 	loadHabitantsHairColors,
 	loadProfile
 } from "../../store/actions/userActions";
+import { showError } from "../../store/actions/appActions";
+
 import HabitantDetailsEdit from "../../components/HabitantDetailsEdit";
 
 const RegisterPage = ({
@@ -18,7 +20,8 @@ const RegisterPage = ({
 	loadProfile,
 	loadHabitantsProfessions,
 	loadHabitantsHairColors,
-	registerUser
+	registerUser,
+	showError
 }) => {
 	return (
 		<HabitantDetailsEdit
@@ -32,6 +35,7 @@ const RegisterPage = ({
 			loadHabitantsProfessions={loadHabitantsProfessions}
 			loadHabitantsHairColors={loadHabitantsHairColors}
 			registerUser={registerUser}
+			showError={showError}
 		/>
 	);
 };
@@ -45,7 +49,8 @@ RegisterPage.propTypes = {
 	loadProfile: PropTypes.func.isRequired,
 	loadHabitantsProfessions: PropTypes.func.isRequired,
 	loadHabitantsHairColors: PropTypes.func.isRequired,
-	registerUser: PropTypes.func.isRequired
+	registerUser: PropTypes.func.isRequired,
+	showError: PropTypes.func
 };
 
 const mapStateToProps = state => ({
@@ -61,6 +66,7 @@ export default connect(
 		loadProfile,
 		loadHabitantsProfessions,
 		loadHabitantsHairColors,
-		registerUser
+		registerUser,
+		showError
 	}
 )(RegisterPage);

@@ -7,6 +7,8 @@ import {
 	loadHabitantsHairColors,
 	loadProfile
 } from "../../store/actions/userActions";
+import { showError } from "../../store/actions/appActions";
+
 import HabitantDetailsEdit from "../../components/HabitantDetailsEdit";
 
 const MyProfilePage = ({
@@ -19,7 +21,8 @@ const MyProfilePage = ({
 	loadProfile,
 	loadHabitantsProfessions,
 	loadHabitantsHairColors,
-	saveProfile
+	saveProfile,
+	showError
 }) => {
 	return (
 		<HabitantDetailsEdit
@@ -34,6 +37,7 @@ const MyProfilePage = ({
 			loadHabitantsProfessions={loadHabitantsProfessions}
 			loadHabitantsHairColors={loadHabitantsHairColors}
 			saveProfile={saveProfile}
+			showError={showError}
 		/>
 	);
 };
@@ -48,7 +52,8 @@ MyProfilePage.propTypes = {
 	loadProfile: PropTypes.func.isRequired,
 	loadHabitantsProfessions: PropTypes.func.isRequired,
 	loadHabitantsHairColors: PropTypes.func.isRequired,
-	saveProfile: PropTypes.func.isRequired
+	saveProfile: PropTypes.func.isRequired,
+	showError: PropTypes.func
 };
 
 const mapStateToProps = state => ({
@@ -65,6 +70,7 @@ export default connect(
 		loadProfile,
 		loadHabitantsProfessions,
 		loadHabitantsHairColors,
-		saveProfile
+		saveProfile,
+		showError
 	}
 )(MyProfilePage);

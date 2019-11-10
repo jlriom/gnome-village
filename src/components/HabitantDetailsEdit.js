@@ -18,7 +18,8 @@ const HabitantDetailsEdit = ({
 	loadHabitantsHairColors,
 	loadProfile,
 	registerUser,
-	saveProfile
+	saveProfile,
+	showError
 }) => {
 	const [values, setValues] = useState(defaultProfile);
 
@@ -125,7 +126,7 @@ const HabitantDetailsEdit = ({
 			errorList.push("Image not not found on internet!");
 		}
 		if (errorList.length > 0) {
-			alert(errorList.join("\n"));
+			showError("Habitant Details", errorList[0]);
 			return false;
 		}
 		return true;
@@ -279,7 +280,8 @@ HabitantDetailsEdit.propTypes = {
 	loadHabitantsHairColors: PropTypes.func.isRequired,
 	loadProfile: PropTypes.func.isRequired,
 	registerUser: PropTypes.func,
-	saveProfile: PropTypes.func
+	saveProfile: PropTypes.func,
+	showError: PropTypes.func
 };
 
 export default HabitantDetailsEdit;

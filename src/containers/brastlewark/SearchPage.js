@@ -73,12 +73,13 @@ const SearchPage = ({
 	};
 
 	const handlePageChanged = page => {
+		let newPage = page;
 		const lastPage = numPages(searchCriteria, total);
-		if (page < 0) page = 1;
-		if (page > lastPage) page = lastPage;
+		if (page < 0) newPage = 1;
+		if (page > lastPage) newPage = lastPage;
 		const search = {
 			...searchCriteria,
-			page
+			page: newPage
 		};
 		searchHabitants(search);
 	};

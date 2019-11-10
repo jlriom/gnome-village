@@ -1,6 +1,10 @@
 import * as types from "./actionTypes";
 import PropTypes from "prop-types";
-import { operationInProgress, operationDone } from "../actions/appActions";
+import {
+	operationInProgress,
+	operationDone,
+	showError
+} from "../actions/appActions";
 
 import * as auth from "../../api/auth";
 import history from "../../shared/history";
@@ -32,7 +36,7 @@ export const login = username => async dispatch => {
 		);
 		history.push("/dashboard");
 	} catch (error) {
-		alert(error);
+		dispatch(showError("Login", error));
 	} finally {
 		dispatch(operationDone());
 	}
