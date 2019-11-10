@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { login } from "../../store/actions/authActions";
+import * as authActions from "../../store/actions/authActions";
 import PageLayout from "../../components/layout/PageLayout";
 
 import Modal from "react-bootstrap/Modal";
@@ -75,5 +75,5 @@ LoginPage.propTypes = {
 
 export default connect(
 	() => ({}),
-	{ login }
+	{ ...authActions }
 )(LoginPage);

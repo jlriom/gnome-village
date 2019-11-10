@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import {
-	loadHabitantsByHairColor,
-	loadHabitantsByProfession
-} from "../store/actions/statsActions";
+import * as statsActions from "../store/actions/statsActions";
 
 import PageLayout from "../components/layout/PageLayout";
 import HabitantsByHairColorChart from "../components/Dashboard/HabitantsByHairColorChart";
@@ -72,5 +69,5 @@ const mapStateToProps = state => ({
 
 export default connect(
 	mapStateToProps,
-	{ loadHabitantsByHairColor, loadHabitantsByProfession }
+	{ ...statsActions }
 )(DashBoardPage);

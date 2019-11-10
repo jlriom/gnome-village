@@ -1,13 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import {
-	saveProfile,
-	loadHabitantsProfessions,
-	loadHabitantsHairColors,
-	loadProfile
-} from "../../store/actions/userActions";
-import { showError } from "../../store/actions/appActions";
+import * as userActions from "../../store/actions/userActions";
+import * as appActions from "../../store/actions/appActions";
 
 import HabitantDetailsEdit from "../../components/HabitantDetailsEdit";
 
@@ -66,11 +61,5 @@ const mapStateToProps = state => ({
 
 export default connect(
 	mapStateToProps,
-	{
-		loadProfile,
-		loadHabitantsProfessions,
-		loadHabitantsHairColors,
-		saveProfile,
-		showError
-	}
+	{ ...userActions, ...appActions }
 )(MyProfilePage);

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
-import { loadProfile, loadFriends } from "../../store/actions/userActions";
+import * as userActions from "../../store/actions/userActions";
 import HabitantDetails from "../../components/HabitantDetails";
 
 const HabitantPage = ({ id, profile, friends, loadProfile, loadFriends }) => {
@@ -35,5 +35,5 @@ const mapStateToProps = state => ({
 
 export default connect(
 	mapStateToProps,
-	{ loadProfile, loadFriends }
+	{ ...userActions }
 )(HabitantPage);

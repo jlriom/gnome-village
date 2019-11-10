@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logout } from "../../store/actions/authActions";
+import * as authActions from "../../store/actions/authActions";
 
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -41,5 +41,5 @@ LogoutPage.propTypes = {
 
 export default connect(
 	() => ({}),
-	{ logout }
+	{ ...authActions }
 )(LogoutPage);

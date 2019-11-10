@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { searchHabitants } from "../../store/actions/searchActions";
-import {
-	loadFriends,
-	addFriend,
-	removeFriend
-} from "../../store/actions/userActions";
+import * as searchActions from "../../store/actions/searchActions";
+import * as userActions from "../../store/actions/userActions";
 import PageLayout from "../../components/layout/PageLayout";
 import HabitantItem from "../../components/HabitantItem";
 
@@ -187,5 +183,5 @@ const mapStateToProps = state => ({
 
 export default connect(
 	mapStateToProps,
-	{ searchHabitants, loadFriends, addFriend, removeFriend }
+	{ ...searchActions, ...userActions }
 )(SearchPage);
