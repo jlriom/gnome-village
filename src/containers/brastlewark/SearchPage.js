@@ -63,14 +63,14 @@ const SearchPage = ({
 		}
 	};
 
-	const numPages = (searchCriteria, total) => {
-		const numPages = Math.trunc(total / searchCriteria.limit);
-		return numPages * searchCriteria.limit === total ? numPages : numPages + 1;
+	const numPages = () => {
+		const nump = Math.trunc(total / searchCriteria.limit);
+		return nump * searchCriteria.limit === total ? nump : nump + 1;
 	};
 
 	const handlePageChanged = page => {
 		let newPage = page;
-		const lastPage = numPages(searchCriteria, total);
+		const lastPage = numPages();
 		if (page < 0) newPage = 1;
 		if (page > lastPage) newPage = lastPage;
 		const search = {
