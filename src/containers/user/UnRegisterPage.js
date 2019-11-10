@@ -7,6 +7,7 @@ import { logout } from "../../store/actions/authActions";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
+// eslint-disable-next-line no-shadow
 const UnRegisterPage = ({
 	id,
 	name,
