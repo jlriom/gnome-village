@@ -2,13 +2,8 @@ import * as types from "../actions/actionTypes";
 import initialState from "../state/initialState";
 import { noError, createError } from "../state/errorState";
 
-const userReducer = (state = initialState.user, action) => {
+const userReducer = (action, state = initialState.user) => {
 	switch (action.type) {
-		case types.ADD_FRIEND_SUCCESS:
-			return {
-				...state,
-				error: noError
-			};
 		case types.LOAD_HAB_HAIR_COLORS_SUCCESS:
 			return {
 				...state,
@@ -41,11 +36,6 @@ const userReducer = (state = initialState.user, action) => {
 				profile: initialState.defaultProfile,
 				error: noError
 			};
-		case types.REMOVE_FRIEND_SUCCESS:
-			return {
-				...state,
-				error: noError
-			};
 		case types.SAVE_HAB_DETAILS_SUCCESS:
 			return {
 				...state,
@@ -57,6 +47,12 @@ const userReducer = (state = initialState.user, action) => {
 			return {
 				...state,
 				profile: initialState.defaultProfile,
+				error: noError
+			};
+		case types.ADD_FRIEND_SUCCESS:
+		case types.REMOVE_FRIEND_SUCCESS:
+			return {
+				...state,
 				error: noError
 			};
 		case types.REGISTERME_AS_HAB_FAIL:

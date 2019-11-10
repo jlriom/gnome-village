@@ -1,7 +1,7 @@
 import * as types from "../actions/actionTypes";
 import initialState from "../state/initialState";
 
-const appReducer = (state = initialState.app, action) => {
+const appReducer = (action, state = initialState.app) => {
 	let numOperationsInProgress;
 
 	switch (action.type) {

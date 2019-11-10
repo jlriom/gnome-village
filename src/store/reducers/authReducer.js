@@ -1,7 +1,7 @@
 import * as types from "../actions/actionTypes";
 import initialState from "../state/initialState";
 
-const authReducer = (state = initialState.auth, action) => {
+const authReducer = (action, state = initialState.auth) => {
 	switch (action.type) {
 		case types.AUTH_LOGIN:
 			return {
