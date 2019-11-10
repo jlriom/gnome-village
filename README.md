@@ -35,7 +35,8 @@ In the project directory, you can run:
 ### `yarn start`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser. <br />
+Note: It starts automatically the backend API [http://localhost:5000/brastlewark](http://localhost:5000/brastlewark)
 
 ### `yarn test`
 
