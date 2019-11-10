@@ -1,7 +1,7 @@
 import * as writeApi from "./brastlewark-write-api";
 import { getGnomeById } from "./brastlewark-read-api";
 
-const writeApiTest = async () => {
+const brastlewarkWriteApiTest = async () => {
 	const gnomeToCreate = {
 		name: "x",
 		thumbnail:
@@ -40,4 +40,4 @@ const writeApiTest = async () => {
 	await writeApi.deleteGnome(retrievedGnome.id);
 };
 
-export default writeApiTest;
+export default brastlewarkWriteApiTest;

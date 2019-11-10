@@ -29,7 +29,7 @@ const getProfessions = async () => {
 
 	var professions = gnomes.list
 		.map(data => [...data.professions])
-		.reduce((total, currentValue) => (total = [...total, ...currentValue]));
+		.reduce((total, currentValue) => [...total, ...currentValue]);
 
 	let gnomesByProfession = [...new Set(professions)].map(profession => {
 		return { profession, count: 0 };
@@ -75,7 +75,7 @@ const searchGnomes = async ({
 };
 
 const addExpression = (expressions, parameter, value) => {
-	if (value && value !== "") {
+	if (value) {
 		expressions.push(`${parameter}=${value}`);
 	}
 	return expressions;

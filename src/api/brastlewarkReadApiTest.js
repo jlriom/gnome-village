@@ -1,6 +1,6 @@
 import * as readApi from "./brastlewark-read-api";
 
-const readApiTest = async () => {
+const brastlewarkReadApiTest = async () => {
 	console.log(await readApi.getHairColors());
 
 	console.log(await readApi.getProfessions());
@@ -16,4 +16,4 @@ const readApiTest = async () => {
 	console.log(await readApi.searchGnomes());
 };
 
-export default readApiTest;
+export default brastlewarkReadApiTest;

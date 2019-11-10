@@ -44,9 +44,9 @@ const brastlewarkHttpTest = async () => {
 		console.log("gnomeToUpdate", gnomeToUpdate);
 
 		await brastlewarkHttp.updateGnome(gnomeToUpdate);
-		const gnome = await brastlewarkHttp.getGnomeById(gnomeToUpdate.id);
-		console.log("getById", gnome);
-		await brastlewarkHttp.deleteGnome(gnome.id);
+		const retrievedgnome = await brastlewarkHttp.getGnomeById(gnomeToUpdate.id);
+		console.log("getById", retrievedgnome);
+		await brastlewarkHttp.deleteGnome(retrievedgnome.id);
 	}
 };
 
