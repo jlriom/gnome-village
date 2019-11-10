@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { unRegisterme } from "../../store/actions/userActions";
-import { logout } from "../../store/actions/authActions";
+import * as userActions from "../../store/actions/userActions";
+import * as authActions from "../../store/actions/authActions";
 
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-// eslint-disable-next-line no-shadow
 const UnRegisterPage = ({
 	id,
 	name,
@@ -65,5 +64,5 @@ const mapStateToProps = state => ({
 });
 export default connect(
 	mapStateToProps,
-	{ logout, unRegisterme }
+	{ ...userActions, ...authActions }
 )(UnRegisterPage);
