@@ -121,16 +121,14 @@ const SearchPage = ({
 										onClick={() => handlePageChanged(searchCriteria.page - 1)}
 									/>
 									<Pagination.Item>
-										{searchCriteria.page} of {numPages(searchCriteria, total)} (
-										{total} habitants found)
+										{searchCriteria.page} of {numPages()} ({total} habitants
+										found)
 									</Pagination.Item>
 									<Pagination.Next
 										onClick={() => handlePageChanged(searchCriteria.page + 1)}
 									/>
 									<Pagination.Last
-										onClick={() =>
-											handlePageChanged(numPages(searchCriteria, total))
-										}
+										onClick={() => handlePageChanged(numPages())}
 									/>
 								</Pagination>
 							)}
