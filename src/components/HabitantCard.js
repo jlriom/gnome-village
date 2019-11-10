@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
 import LazyLoad from "react-lazyload";
+import HabitantProperties from "./HabitantProperties";
 
 const ProfessionItem = ({ profession }) => (
 	<>
@@ -11,15 +12,7 @@ const ProfessionItem = ({ profession }) => (
 );
 
 const HabitantCard = ({ habitant }) => {
-	const {
-		name,
-		thumbnail,
-		age,
-		weight,
-		height,
-		hair_color,
-		professions
-	} = habitant;
+	const { name, thumbnail, professions } = habitant;
 
 	return (
 		<>
@@ -31,14 +24,7 @@ const HabitantCard = ({ habitant }) => {
 					<Card.Title>{name}</Card.Title>
 					<div className='container' style={{ weight: "100%" }}>
 						<dl className='row'>
-							<dt className='col-sm-6'>Age:</dt>
-							<dd className='col-sm-6'> {age}</dd>
-							<dt className='col-sm-6'>Hair Color:</dt>
-							<dd className='col-sm-6'> {hair_color}</dd>
-							<dt className='col-sm-6'>Weight:</dt>
-							<dd className='col-sm-6'> {weight.toFixed(3)}</dd>
-							<dt className='col-sm-6'>Height:</dt>
-							<dd className='col-sm-6'> {height.toFixed(3)}</dd>
+							<HabitantProperties {...habitant} />
 						</dl>
 						<hr></hr>
 						<div className='row'>

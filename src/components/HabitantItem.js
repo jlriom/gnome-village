@@ -6,6 +6,7 @@ import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import LazyLoad from "react-lazyload";
 import "./HabitantItem.css";
+import HabitantProperties from "./HabitantProperties";
 
 const HabitantItem = ({
 	habitant,
@@ -16,17 +17,7 @@ const HabitantItem = ({
 	removeFriend,
 	addRemoveFriend
 }) => {
-	const {
-		id,
-		name,
-		thumbnail,
-		age,
-		weight,
-		height,
-		hair_color,
-		professions,
-		friends
-	} = habitant;
+	const { id, name, thumbnail, professions, friends } = habitant;
 
 	const [isFriend, setIsFriend] = useState(
 		manageFriends && myfriends.map(f => f.name).includes(name)
@@ -74,14 +65,7 @@ const HabitantItem = ({
 								<div className='row'>
 									<div className='col-lg-4'>
 										<dl className='row full-width'>
-											<dt className='col-sm-5'>Age:</dt>
-											<dd className='col-sm-7'> {age}</dd>
-											<dt className='col-sm-5'>Hair Color:</dt>
-											<dd className='col-sm-7'> {hair_color}</dd>
-											<dt className='col-sm-5'>Weight:</dt>
-											<dd className='col-sm-7'> {weight.toFixed(3)}</dd>
-											<dt className='col-sm-5'>Height:</dt>
-											<dd className='col-sm-7'> {height.toFixed(3)}</dd>
+											<HabitantProperties {...habitant} />
 										</dl>
 									</div>
 									<div className='col-lg-4'>
