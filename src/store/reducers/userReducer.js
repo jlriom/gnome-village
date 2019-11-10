@@ -1,8 +1,9 @@
 import * as types from "../actions/actionTypes";
 import initialState from "../state/initialState";
 import { noError, createError } from "../state/errorState";
+import noop from "./noop";
 
-const userReducer = (action, state = initialState.user) => {
+const userReducer = (state = initialState.user, action = noop) => {
 	switch (action.type) {
 		case types.LOAD_HAB_HAIR_COLORS_SUCCESS:
 			return {

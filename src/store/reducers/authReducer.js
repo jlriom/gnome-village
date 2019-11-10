@@ -1,7 +1,8 @@
 import * as types from "../actions/actionTypes";
 import initialState from "../state/initialState";
+import noop from "./noop";
 
-const authReducer = (action, state = initialState.auth) => {
+const authReducer = (state = initialState.auth, action = noop) => {
 	switch (action.type) {
 		case types.AUTH_LOGIN:
 			return {

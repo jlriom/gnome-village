@@ -1,7 +1,8 @@
 import * as types from "../actions/actionTypes";
 import initialState from "../state/initialState";
+import noop from "./noop";
 
-const appReducer = (action, state = initialState.app) => {
+const appReducer = (state = initialState.app, action = noop) => {
 	let numOperationsInProgress;
 
 	switch (action.type) {

@@ -72,7 +72,7 @@ const HabitantItem = ({
 										{professions && professions.length > 0 ? (
 											<div className='row full-width'>
 												<b>Professions: </b>&nbsp;
-												{professions.map((profession, index, professions) => (
+												{professions.map((profession, index) => (
 													<span key={profession}>
 														{profession}
 														{professions.length - 1 > index ? ", " : ""}
@@ -87,7 +87,7 @@ const HabitantItem = ({
 										{friends && friends.length > 0 ? (
 											<div className='row full-width'>
 												<b>Friends: </b> &nbsp;
-												{friends.map((friend, index, friends) => (
+												{friends.map((friend, index) => (
 													<span key={friend}>
 														<Link to={`/brastlewark/${friend}`}>{friend}</Link>
 														{friends.length - 1 > index ? ", " : ""}

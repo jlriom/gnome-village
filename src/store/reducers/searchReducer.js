@@ -1,8 +1,9 @@
 import * as types from "../actions/actionTypes";
 import initialState from "../state/initialState";
 import { noError, createError } from "../state/errorState";
+import noop from "./noop";
 
-const searchReducer = (action, state = initialState.habitants) => {
+const searchReducer = (state = initialState.habitants, action = noop) => {
 	switch (action.type) {
 		case types.SEARCH_HABITANTS_SUCCESS:
 			return {
