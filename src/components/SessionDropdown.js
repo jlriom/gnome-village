@@ -13,16 +13,16 @@ const SessionDropdown = ({ auth }) => {
 
 	return (
 		<>
-			<MyProfilePage
+			{showMyProfilePage && <MyProfilePage
 				show={showMyProfilePage}
-				handleClose={() => setShowMyProfilePage(false)}></MyProfilePage>
-			<LogoutPage
+				handleClose={() => setShowMyProfilePage(false)}></MyProfilePage>}
+			{showLogoutPage && <LogoutPage
 				show={showLogoutPage}
-				handleClose={() => setShowLogoutPage(false)}></LogoutPage>
+				handleClose={() => setShowLogoutPage(false)}></LogoutPage>}
 
-			<UnRegisterPage
+			{showUnregisterPage && <UnRegisterPage
 				show={showUnregisterPage}
-				handleClose={() => setShowUnregisterPage(false)}></UnRegisterPage>
+				handleClose={() => setShowUnregisterPage(false)}></UnRegisterPage>}
 
 			<NavDropdown title={auth.username} id='basic-nav-dropdown'>
 				{!auth.isGuest && (
