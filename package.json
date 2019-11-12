@@ -1,86 +1,101 @@
 {
-	"name": "gnome-village",
-	"version": "0.1.0",
-	"private": true,
-	"dependencies": {
-		"@fortawesome/fontawesome-free": "^5.11.2",
-		"@fortawesome/fontawesome-svg-core": "^1.2.25",
-		"@fortawesome/free-brands-svg-icons": "^5.11.2",
-		"@fortawesome/free-regular-svg-icons": "^5.11.2",
-		"@fortawesome/react-fontawesome": "^0.1.7",
-		"axios": "^0.19.0",
-		"bootstrap": "^4.3.1",
-		"chart.js": "^2.9.1",
-		"classnames": "^2.2.6",
-		"history": "^4.10.1",
-		"primeicons": "^2.0.0",
-		"primereact": "^3.3.2",
-		"react": "^16.11.0",
-		"react-bootstrap": "^1.0.0-beta.14",
-		"react-dom": "^16.11.0",
-		"react-lazyload": "^2.6.2",
-		"react-redux": "^7.1.1",
-		"react-router-dom": "^5.1.2",
-		"react-scripts": "3.2.0",
-		"react-select": "^3.0.8",
-		"react-toastify": "^5.4.0",
-		"react-transition-group": "^4.3.0",
-		"redux": "^4.0.4",
-		"redux-immutable-state-invariant": "^2.1.0",
-		"redux-logger": "^3.0.6",
-		"redux-thunk": "^2.3.0"
-	},
-	"devDependencies": {
-		"concurrently": "^5.0.0",
-		"config": "^3.2.4",
-		"connect-pause": "^0.1.0",
-		"enzyme": "^3.10.0",
-		"enzyme-adapter-react-16": "^1.15.1",
-		"eslint": "^6.6.0",
-		"jest": "^24.9.0",
-		"json-server": "^0.15.1",
-		"react-test-renderer": "^16.11.0",
-		"request": "^2.88.0"
-	},
-	"scripts": {
-		"start": "concurrently \"yarn start:dev\" \"yarn start:server\"",
-		"start:dev": "react-scripts start",
-		"start:server": "node json-server\\server.js",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject",
-		"reset:db": "node json-server\\createDb.js",
-		"test:coverage": "set CI=true && react-scripts test --coverage"
-	},
-	"eslintConfig": {
-		"extends": "react-app"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"author": "jlriom@hotmail.es",
-	"keywords": [
-		"ES6+",
-		"Async / Await",
-		"React",
-		"Redux",
-		"react-redux",
-		"redux-thunk",
-		"react-bootstrap",
-		"json-server",
-		"Jest"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/jlriom/gnome-village.git"
-	}
+  "name": "gnome-village",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-regular-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "chart.js": "^2.9.1",
+    "classnames": "^2.2.6",
+    "history": "^4.10.1",
+    "primeicons": "^2.0.0",
+    "primereact": "^3.3.2",
+    "react": "^16.11.0",
+    "react-bootstrap": "^1.0.0-beta.14",
+    "react-dom": "^16.11.0",
+    "react-lazyload": "^2.6.2",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "react-select": "^3.0.8",
+    "react-toastify": "^5.4.0",
+    "react-transition-group": "^4.3.0",
+    "redux": "^4.0.4",
+    "redux-immutable-state-invariant": "^2.1.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "config": "^3.2.4",
+    "connect-pause": "^0.1.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "eslint": "^6.6.0",
+    "jest": "^24.9.0",
+    "json-server": "^0.15.1",
+    "react-test-renderer": "^16.11.0",
+    "request": "^2.88.0"
+  },
+  "scripts": {
+    "start": "concurrently \"yarn start:dev\" \"yarn start:server\"",
+    "start:dev": "react-scripts start",
+    "start:server": "node json-server\\server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "reset:db": "node json-server\\createDb.js",
+    "test:coverage": "set CI=true && react-scripts test --coverage"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "author": "jlriom@hotmail.es",
+  "keywords": [
+    "ES6+",
+    "Async / Await",
+    "React",
+    "Redux",
+    "react-redux",
+    "redux-thunk",
+    "react-bootstrap",
+    "json-server",
+    "Jest"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlriom/gnome-village.git"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/src/containers/HabitantCard.js",
+      "!**/__test__/**",
+      "!**/node_modules/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 0,
+        "branches": 0,
+        "functions": 0,
+        "lines": 0
+      }
+    }
+  }
 }

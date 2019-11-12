@@ -1,0 +1,541 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HabitantsByProfession /> renders ok 1`] = `
+<ul
+  className="list-group my-4"
+>
+  <li
+    className="list-group-item  list-group-item-secondary"
+  >
+    Habitans by profession
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Baker
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        214
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Blacksmith
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        180
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Brewer
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        200
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Butcher
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        210
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Carpenter
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        216
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Cook
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        190
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Farmer
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        205
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Gemcutter
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        186
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Leatherworker
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        185
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Marble Carver
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        190
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Mason
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        214
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Mechanic
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        182
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Medic
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        187
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Metalworker
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        192
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Miner
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        201
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Potter
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        202
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Prospector
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        202
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Sculptor
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        182
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Smelter
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        203
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Stonecarver
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        187
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Tailor
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        199
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Tax inspector
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        192
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+         Tinker
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        202
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Woodcarver
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        199
+      </span>
+    </span>
+  </li>
+</ul>
+`;

@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HabitantCard /> renders ok 1`] = `
+<div
+  className="card"
+  style={
+    Object {
+      "width": "18rem",
+    }
+  }
+>
+  <div
+    className="lazyload-placeholder"
+    style={
+      Object {
+        "height": undefined,
+      }
+    }
+  />
+  <div
+    className="card-body"
+  >
+    <div
+      className="card-title h5"
+    >
+      Cogwitz Bittergrill
+    </div>
+    <div
+      className="container"
+      style={
+        Object {
+          "weight": "100%",
+        }
+      }
+    >
+      <dl
+        className="row"
+      >
+        <dt
+          className="col-sm-6"
+        >
+           
+          Age:
+        </dt>
+        <dd
+          className="col-sm-6"
+        >
+           
+          127
+        </dd>
+        <dt
+          className="col-sm-6"
+        >
+           
+          Hair Color:
+        </dt>
+        <dd
+          className="col-sm-6"
+        >
+           
+          Black
+        </dd>
+        <dt
+          className="col-sm-6"
+        >
+           
+          Weight:
+        </dt>
+        <dd
+          className="col-sm-6"
+        >
+           
+          40.075
+        </dd>
+        <dt
+          className="col-sm-6"
+        >
+           
+          Height:
+        </dt>
+        <dd
+          className="col-sm-6"
+        >
+           
+          93.663
+        </dd>
+      </dl>
+      <hr />
+      <div
+        className="row"
+      >
+        <dl
+          className="row"
+        >
+          <dt
+            className="col-sm-6"
+          >
+            Professions:
+          </dt>
+          <dd
+            className="col-sm-6"
+          >
+              
+          </dd>
+          <dt
+            className="col-sm-6"
+          >
+             
+          </dt>
+          <dd
+            className="col-sm-6 "
+          >
+            Prospector
+          </dd>
+          <dt
+            className="col-sm-6"
+          >
+             
+          </dt>
+          <dd
+            className="col-sm-6 "
+          >
+             Tinker
+          </dd>
+          <dt
+            className="col-sm-6"
+          >
+             
+          </dt>
+          <dd
+            className="col-sm-6 "
+          >
+            Baker
+          </dd>
+          <dt
+            className="col-sm-6"
+          >
+             
+          </dt>
+          <dd
+            className="col-sm-6 "
+          >
+            Tailor
+          </dd>
+          <dt
+            className="col-sm-6"
+          >
+             
+          </dt>
+          <dd
+            className="col-sm-6 "
+          >
+            Leatherworker
+          </dd>
+          <dt
+            className="col-sm-6"
+          >
+             
+          </dt>
+          <dd
+            className="col-sm-6 "
+          >
+            Sculptor
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+`;

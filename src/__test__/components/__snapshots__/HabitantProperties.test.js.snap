@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HabitantProperties /> renders ok 1`] = `
+Array [
+  <dt
+    className="col-sm-6"
+  >
+     
+    Age:
+  </dt>,
+  <dd
+    className="col-sm-6"
+  >
+     
+    127
+  </dd>,
+  <dt
+    className="col-sm-6"
+  >
+     
+    Hair Color:
+  </dt>,
+  <dd
+    className="col-sm-6"
+  >
+     
+    Black
+  </dd>,
+  <dt
+    className="col-sm-6"
+  >
+     
+    Weight:
+  </dt>,
+  <dd
+    className="col-sm-6"
+  >
+     
+    40.075
+  </dd>,
+  <dt
+    className="col-sm-6"
+  >
+     
+    Height:
+  </dt>,
+  <dd
+    className="col-sm-6"
+  >
+     
+    93.663
+  </dd>,
+]
+`;

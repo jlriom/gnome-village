@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TotalSection /> renders ok 1`] = `
+<ul
+  className="list-group my-4"
+>
+  <li
+    className="list-group-item  list-group-item-info"
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Total of habitans
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        1339
+      </span>
+    </span>
+  </li>
+</ul>
+`;
