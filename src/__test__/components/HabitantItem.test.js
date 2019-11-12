@@ -2,6 +2,7 @@ import React from "react";
 import HabitantItem from "../../components/HabitantItem";
 import renderer from "react-test-renderer";
 import { habitant } from "../fakeData";
+import { MemoryRouter } from 'react-router-dom';
 
 const props = {
     habitant: habitant,
@@ -16,7 +17,9 @@ const props = {
 describe("<HabitantItem />", () => {
     it("renders ok", () => {
         const tree = renderer.create(
-            <HabitantItem {...props} />
+            <MemoryRouter>
+                <HabitantItem {...props} />
+            </MemoryRouter>
         );
         expect(tree).toMatchSnapshot();
     });
