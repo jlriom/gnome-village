@@ -8,7 +8,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-const DEFAULT_USER = "Tobus Quickwhistle";
+const DEFAULT_USER = "";
 
 const LoginPage = ({ show, handleClose, login }) => {
 	const [userName, setUserName] = useState(DEFAULT_USER);

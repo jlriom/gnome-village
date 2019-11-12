@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFoundPage /> renders ok 1`] = `
+Array [
+  <h2
+    className="my-3 display-4"
+  >
+    Page not found
+  </h2>,
+  <hr />,
+  <div>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      Go to Home page
+    </a>
+  </div>,
+]
+`;

@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FriendsPage /> renders ok 1`] = `
+Array [
+  "",
+  "",
+  <div>
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-3"
+        >
+          <div
+            className="card"
+            style={
+              Object {
+                "width": "18rem",
+              }
+            }
+          >
+            <div
+              className="lazyload-placeholder"
+              style={
+                Object {
+                  "height": undefined,
+                }
+              }
+            />
+            <div
+              className="card-body"
+            >
+              <div
+                className="card-title h5"
+              >
+                
+              </div>
+              <div
+                className="container"
+                style={
+                  Object {
+                    "weight": "100%",
+                  }
+                }
+              >
+                <dl
+                  className="row"
+                >
+                  <dt
+                    className="col-sm-6"
+                  >
+                     
+                    Age:
+                  </dt>
+                  <dd
+                    className="col-sm-6"
+                  >
+                     
+                    0
+                  </dd>
+                  <dt
+                    className="col-sm-6"
+                  >
+                     
+                    Hair Color:
+                  </dt>
+                  <dd
+                    className="col-sm-6"
+                  >
+                     
+                    Black
+                  </dd>
+                  <dt
+                    className="col-sm-6"
+                  >
+                     
+                    Weight:
+                  </dt>
+                  <dd
+                    className="col-sm-6"
+                  >
+                     
+                    0.000
+                  </dd>
+                  <dt
+                    className="col-sm-6"
+                  >
+                     
+                    Height:
+                  </dt>
+                  <dd
+                    className="col-sm-6"
+                  >
+                     
+                    0.000
+                  </dd>
+                </dl>
+                <hr />
+                <div
+                  className="row"
+                >
+                  <span />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-9"
+        >
+          <h3
+            className="m-4"
+          >
+            Friends
+          </h3>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
