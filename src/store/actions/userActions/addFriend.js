@@ -7,11 +7,11 @@ import {
 } from "../../actions/appActions";
 import { addFriendToGnome } from "../../../api/brastlewark-write-api";
 
-const addFriendSuccess = () => ({
+export const addFriendSuccess = () => ({
 	type: types.ADD_FRIEND_SUCCESS
 });
 
-const addFriendFail = error => ({
+export const addFriendFail = error => ({
 	type: types.ADD_FRIEND_FAIL,
 	error
 });
