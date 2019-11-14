@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FriendsPage /> renders ok 1`] = `
+<div>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-sm-3"
+      />
+      <div
+        className="col-sm-6"
+      >
+        <form
+          className=""
+          onSubmit={[Function]}
+        >
+          <div
+            className="input-group"
+          >
+            <input
+              aria-describedby="Search Brastlewark's habitant"
+              aria-label="Search Brastlewark's habitant"
+              className="form-control"
+              onChange={[Function]}
+              placeholder="Search Brastlewark's habitant"
+              value=""
+            />
+            <div
+              className="input-group-append"
+            >
+              <button
+                className="btn btn-secondary"
+                disabled={false}
+                type="submit"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div
+        className="col-sm-3"
+      />
+    </div>
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="col center-block"
+      >
+        <div
+          className="flexBox"
+          style={
+            Object {
+              "display": "flex",
+              "flexFlow": "row wrap",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <ul
+            className="pagination"
+          >
+            <li
+              className="page-item"
+            >
+              <a
+                className="page-link"
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+              >
+                <span
+                  aria-hidden="true"
+                >
+                  «
+                </span>
+                <span
+                  className="sr-only"
+                >
+                  First
+                </span>
+              </a>
+            </li>
+            <li
+              className="page-item"
+            >
+              <a
+                className="page-link"
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+              >
+                <span
+                  aria-hidden="true"
+                >
+                  ‹
+                </span>
+                <span
+                  className="sr-only"
+                >
+                  Previous
+                </span>
+              </a>
+            </li>
+            <li
+              className="page-item"
+            >
+              <a
+                className="page-link"
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+              >
+                1
+                 of 
+                0
+                 (
+                0
+                 habitants found)
+              </a>
+            </li>
+            <li
+              className="page-item"
+            >
+              <a
+                className="page-link"
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+              >
+                <span
+                  aria-hidden="true"
+                >
+                  ›
+                </span>
+                <span
+                  className="sr-only"
+                >
+                  Next
+                </span>
+              </a>
+            </li>
+            <li
+              className="page-item"
+            >
+              <a
+                className="page-link"
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+              >
+                <span
+                  aria-hidden="true"
+                >
+                  »
+                </span>
+                <span
+                  className="sr-only"
+                >
+                  Last
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul />
+</div>
+`;

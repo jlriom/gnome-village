@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HabitantsByHairColor /> renders ok 1`] = `
+<ul
+  className="list-group my-4"
+>
+  <li
+    className="list-group-item  list-group-item-secondary"
+  >
+    Habitants by hair color
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Black
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        256
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Gray
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        258
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Green
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        267
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Pink
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        285
+      </span>
+    </span>
+  </li>
+  <li
+    className="list-group-item "
+  >
+    <span
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <span>
+        Red
+         
+      </span>
+      <span
+        className="badge  badge-pill badge-secondary "
+      >
+        273
+      </span>
+    </span>
+  </li>
+</ul>
+`;
