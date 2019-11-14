@@ -6,7 +6,7 @@ import {
 	showError,
 	showMessage
 } from "../../actions/appActions";
-import { updateGnome } from "../../../api/brastlewark-write-api";
+import { updateGnome } from "../../../api/brastlewarkWriteApi";
 
 const saveProfileSuccess = profile => ({
 	type: types.SAVE_HAB_DETAILS_SUCCESS,

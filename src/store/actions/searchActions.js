@@ -1,6 +1,6 @@
 import * as types from "./actionTypes";
 import PropTypes from "prop-types";
-import * as readApi from "../../api/brastlewark-read-api";
+import * as readApi from "../../api/brastlewarkReadApi";
 import {
 	operationInProgress,
 	operationDone,

@@ -5,10 +5,7 @@ import {
 	operationDone,
 	showError
 } from "../../actions/appActions";
-import {
-	getGnomeById,
-	getGnomeByName
-} from "../../../api/brastlewark-read-api";
+import { getGnomeById, getGnomeByName } from "../../../api/brastlewarkReadApi";
 
 const loadFriendsSuccess = friends => ({
 	type: types.LOAD_FRIENDS_SUCCESS,

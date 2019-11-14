@@ -5,7 +5,7 @@ import {
 	operationDone,
 	showError
 } from "../../actions/appActions";
-import { deleteGnome } from "../../../api/brastlewark-write-api";
+import { deleteGnome } from "../../../api/brastlewarkWriteApi";
 
 const unRegistermeSuccess = () => ({
 	type: types.UNREGISTERME_AS_HAB_SUCCESS
