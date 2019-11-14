@@ -5,7 +5,7 @@ import {
 	operationDone,
 	showError
 } from "../../actions/appActions";
-import { getProfessions } from "../../../api/brastlewark-read-api";
+import { getProfessions } from "../../../api/brastlewarkReadApi";
 
 const loadHabitantsProfessionsSuccess = professions => ({
 	type: types.LOAD_HAB_PROFESSIONS_SUCCESS,

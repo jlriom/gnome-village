@@ -5,7 +5,7 @@ import {
 	operationDone,
 	showError
 } from "../../actions/appActions";
-import { addFriendToGnome } from "../../../api/brastlewark-write-api";
+import { addFriendToGnome } from "../../../api/brastlewarkWriteApi";
 
 const addFriendSuccess = () => ({
 	type: types.ADD_FRIEND_SUCCESS

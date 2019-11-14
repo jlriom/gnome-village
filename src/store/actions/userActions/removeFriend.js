@@ -5,7 +5,7 @@ import {
 	operationDone,
 	showError
 } from "../../actions/appActions";
-import { removeFriendFromGnome } from "../../../api/brastlewark-write-api";
+import { removeFriendFromGnome } from "../../../api/brastlewarkWriteApi";
 
 const removeFriendSuccess = () => ({
 	type: types.REMOVE_FRIEND_SUCCESS

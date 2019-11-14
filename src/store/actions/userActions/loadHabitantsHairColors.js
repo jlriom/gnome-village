@@ -5,7 +5,7 @@ import {
 	operationDone,
 	showError
 } from "../../actions/appActions";
-import { getHairColors } from "../../../api/brastlewark-read-api";
+import { getHairColors } from "../../../api/brastlewarkReadApi";
 
 const loadHabitantsHairColorsSuccess = hairColors => ({
 	type: types.LOAD_HAB_HAIR_COLORS_SUCCESS,

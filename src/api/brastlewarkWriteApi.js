@@ -1,4 +1,4 @@
-import * as brastlewarkHttp from "./brastlewark-http";
+import * as brastlewarkHttp from "./brastlewarkHttp";
 
 const createGnome = async gnome => {
 	return await brastlewarkHttp.createGnome(gnome);

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CategoryItem /> renders ok 1`] = `
+<li
+  className="list-group-item "
+>
+  <span
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <span>
+      category
+       
+    </span>
+    <span
+      className="badge  badge-pill badge-secondary "
+    >
+      0
+    </span>
+  </span>
+</li>
+`;

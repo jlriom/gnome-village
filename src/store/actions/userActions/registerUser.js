@@ -6,8 +6,8 @@ import {
 	showError,
 	showMessage
 } from "../../actions/appActions";
-import { getGnomeByName } from "../../../api/brastlewark-read-api";
-import { createGnome } from "../../../api/brastlewark-write-api";
+import { getGnomeByName } from "../../../api/brastlewarkReadApi";
+import { createGnome } from "../../../api/brastlewarkWriteApi";
 
 const registerUserExistsYetFail = error => ({
 	type: types.REGISTERME_AS_HAB_EXISTS_FAIL,

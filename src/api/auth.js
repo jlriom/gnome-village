@@ -1,4 +1,4 @@
-import { getGnomeByName } from "./brastlewark-read-api";
+import { getGnomeByName } from "./brastlewarkReadApi";
 
 const GUEST_USER = "guest";
 const GUEST_USER_ID = 0;
