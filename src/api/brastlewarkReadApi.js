@@ -1,4 +1,4 @@
-import * as brastlewarkHttp from "./brastlewark-http";
+import * as brastlewarkHttp from "./brastlewarkHttp";
 
 // eslint-disable-next-line no-extend-native
 Array.prototype.groupBy = function(prop) {

@@ -1,4 +1,4 @@
-import * as readApi from "./brastlewark-read-api";
+import * as readApi from "./brastlewarkReadApi";
 
 const brastlewarkReadApiTest = async () => {
 	console.log(await readApi.getHairColors());

@@ -1,5 +1,5 @@
-import * as writeApi from "./brastlewark-write-api";
-import { getGnomeById } from "./brastlewark-read-api";
+import * as writeApi from "./brastlewarkWriteApi";
+import { getGnomeById } from "./brastlewarkReadApi";
 
 const brastlewarkWriteApiTest = async () => {
 	const gnomeToCreate = {

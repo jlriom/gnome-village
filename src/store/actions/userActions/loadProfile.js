@@ -5,10 +5,7 @@ import {
 	operationDone,
 	showError
 } from "../../actions/appActions";
-import {
-	getGnomeById,
-	getGnomeByName
-} from "../../../api/brastlewark-read-api";
+import { getGnomeById, getGnomeByName } from "../../../api/brastlewarkReadApi";
 import { defaultProfile } from "../../state/profileState";
 
 const loadProfileSuccess = profile => ({
