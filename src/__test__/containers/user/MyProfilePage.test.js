@@ -3,31 +3,31 @@ import MyProfilePage from "../../../containers/user/MyProfilePage";
 import renderer from "react-test-renderer";
 import { Provider } from "react-redux";
 import configureStore from "../../../store/configureStore";
-import { habitant } from "../../fakeData";
+import { habitant } from "../../../__mocks__/fakeData";
 
 const store = configureStore();
 
 const props = {
-    id: 0,
-    profile: habitant,
-    professions: [],
-    hairColors: [],
-    show: false,
-    handleClose: jest.fn(),
-    loadProfile: jest.fn(),
-    loadHabitantsProfessions: jest.fn(),
-    loadHabitantsHairColors: jest.fn(),
-    saveProfile: jest.fn(),
-    showError: jest.fn()
-}
+	id: 0,
+	profile: habitant,
+	professions: [],
+	hairColors: [],
+	show: false,
+	handleClose: jest.fn(),
+	loadProfile: jest.fn(),
+	loadHabitantsProfessions: jest.fn(),
+	loadHabitantsHairColors: jest.fn(),
+	saveProfile: jest.fn(),
+	showError: jest.fn()
+};
 
 describe("<MyProfilePage />", () => {
-    it("renders ok", () => {
-        const tree = renderer.create(
-            <Provider store={store}>
-                <MyProfilePage {...props} />
-            </Provider>
-        );
-        expect(tree).toMatchSnapshot();
-    });
+	it("renders ok", () => {
+		const tree = renderer.create(
+			<Provider store={store}>
+				<MyProfilePage {...props} />
+			</Provider>
+		);
+		expect(tree).toMatchSnapshot();
+	});
 });
