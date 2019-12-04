@@ -1,9 +1,16 @@
 process.env["NODE_CONFIG_DIR"] = __dirname + "/config/";
+const path = require('path');
 const config = require("config");
 const jsonServer = require("json-server");
 const pause = require("connect-pause");
 
-const dbData = config.get("dbData");
+const dbDataFolder = config.get("dbDataFolder");
+const dbDataFile = config.get("dbDataFile");
+
+const dbData =  path.join(dbDataFolder,dbDataFile);
+
+console.log(dbData);
+
 var requestDelay = 0;
 
 if (config.has("delay")) {
