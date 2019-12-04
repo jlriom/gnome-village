@@ -45,11 +45,11 @@
 	"scripts": {
 		"start": "concurrently \"yarn start:dev\" \"yarn start:server\"",
 		"start:dev": "react-scripts start",
-		"start:server": "node json-server\\server.js",
+		"start:server": "node json-server/server.js",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"reset:db": "node json-server\\createDb.js",
+		"reset:db": "node json-server/createDb.js",
 		"test:coverage": "set CI=true && react-scripts test --coverage"
 	},
 	"eslintConfig": {
