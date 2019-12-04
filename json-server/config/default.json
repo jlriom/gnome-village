@@ -1,4 +1,6 @@
 {
-	"dbData": "json-server\\db.json",
+	"dbDataFolder": "json-server",
+	"dbDataFile": "db.json",
 	"delay": 0
 }
+
